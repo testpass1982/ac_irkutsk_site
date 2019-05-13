@@ -19,7 +19,7 @@ from .registry_import import Importer, data_url
 
 def index(request):
     #TODO:  сделать когда-нибудь вывод форм на глваную
-    title = 'Кузбасский центр сварки и контроля'
+    title = 'Головной аттестационный центр Восточно-Сибирского региона'
     """this is mainpage view with forms handler and adapter to messages"""
     # tracker = MessageTracker()
     if request.method == 'POST':
