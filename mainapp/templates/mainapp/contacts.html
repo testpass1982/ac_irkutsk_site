@@ -1,0 +1,117 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="bg_header_inner_page" id="page_top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="headline_bg_inner_page">
+                    Контакты
+                </div>
+                <button class="back_to_home_page">
+                    <a href="{% url 'index' %}" class="link_to_home_page">
+                        <img src="/static/img/back_to_page.png" class="img_back_to_page" alt="">На главную
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box_content_in_pages">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <p class="headline_contacti">
+                    Кузбасский центр сварки и контроля
+                </p>
+                <div class="headline_text_contacts">
+                    Деятельность ООО «Кузбасский центр сварки и контроля» направлена на обеспечение качества сварочного
+                    производства технических устройств опасных производственных объектов, требования к которым
+                    установлены
+                    нормативными документами Ростехнадзора и Системы аттестации сварочного производства (САСв).
+                    <p class="ac_reestr_naks">
+                        <a href="http://www.naks.ru/assp/reestrac/index.php?ID=4649942">Наш центр в реестрах НАКС</a>
+                    </p>
+                </div>
+                <div class="dotted_border_bottom"></div>
+             
+                            <p class="headline_contacti">
+                                Наше местоположение
+                            </p>
+                            <div class="contacti_adres">
+                                650055, город Кемерово, проспект Ленина, <br> дом 33, корпус 2, 5 этаж, правое крыло
+                            </div>
+                            <div class="ya__map">
+                                <script type="text/javascript" charset="utf-8" async
+                                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1c90097a3ad88d5ad8fe021ac1cff0ab8a0016d83bcce0b6f54b6d691e3de0fe&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true">
+                                </script>
+                            </div>
+                    
+            </div>
+            <div class="col-xl-1"></div>
+            <div class="col-md-4 col-xl-4 dotted_left_border">
+                <p class="headline_contacti">
+                    Телефоны центра 
+                </p>
+              <div class="box_contacti">
+                    <p class="headline_number_name">
+                            Центр по аттестации сварщиков и специалистов сварочного производства (ССР-3ГАЦ):
+                        </p>
+                        <div class="phone_contacti">
+                            (3842)44-14-92
+                        </div>
+              </div>
+              <div class="dotted_border_bottom"></div>
+              <div class="box_contacti">
+                    <p class="headline_number_name">
+                            Центр по аттестации сварочных технологий (АЦСТ-90):
+                        </p>
+                        <div class="phone_contacti">
+                                (3842)44-14-91 
+                        </div>
+              </div>
+              <div class="dotted_border_bottom"></div>
+              <div class="box_contacti">
+                    <p class="headline_number_name">
+                            Центры по аттестации сварочного оборудования (АЦСО-82):
+                        </p>
+                        <div class="phone_contacti">
+                                (3842)44-14-94
+                        </div>
+              </div>
+              <div class="dotted_border_bottom"></div>
+              <div class="box_contacti">
+                    <p class="headline_number_name">
+                            Центры по аттестации сварочных материалов (АЦСМ-46):
+                        </p>
+                        <div class="phone_contacti">
+                                (3842)44-14-91
+                        </div>
+              </div>
+              <div class="dotted_border_bottom"></div>
+              <div class="box_contacti">
+                    <p class="headline_number_name">
+                            Центр оценки квалификаций 42.002:
+                        </p>
+                        <div class="phone_contacti">
+                                (3842)44-14-91
+                        </div>
+                        <div class="phone_contacti">
+                                (3842)44-14-92
+                        </div>
+              </div>
+              <div class="dotted_border_bottom"></div>
+              <div class="box_contacti ">
+                    <p class="headline_number_name">
+                            Лаборатория контроля металлов, Лаборатория разрушающих испытаний:
+                        </p>
+                        <div class="phone_contacti">
+                                (3842)44-16-35
+                        </div>
+              </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+{% endblock content %}

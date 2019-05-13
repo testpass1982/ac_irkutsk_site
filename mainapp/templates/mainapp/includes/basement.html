@@ -1,0 +1,152 @@
+{% load static %}
+<div class="box_footer_bg">
+    <div class="container">
+        <div class="footer_box_info_all">
+            <div class="row">
+                <div class="col-xl-3">
+                    <div class="logo_footer">
+                        <img src="{% static '/img/logo_footer.png' %}" alt="">
+                    </div>
+                    <p class="footer_text_company">
+                        Деятельность ООО «Кузбасский центр сварки и контроля» направлена на обеспечение качества
+                        сварочного
+                        производства технических устройств опасных производственных объектов, требования к которым
+                        установлены нормативными документами Ростехнадзора и Системы аттестации сварочного производства
+                        (САСв).
+                    </p>
+
+                    <div class="logo_footer_sasp d-inline-block">
+                        <img src="{% static '/img/footer_logo_sasp.png' %}" alt="">
+                    </div>
+                    <div class="rsps_logo d-inline-block">
+                        <a href="http://www.rsps.site" target="_blank">
+                            <img src="{% static '/img/rsps_logo.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-1">
+
+                </div>
+                <div class="col-sm-4 col-md-4 col-xl-2">
+                    <div class="head_info_footer">
+                        <p class="name_info_block">
+                            Новости
+                        </p>
+                    </div>
+                    {% for post in basement_news %}
+                    <div class="box_footer_news">
+                        <a href="{% url 'details_news' post.pk %}">
+                            <p class="footer_news">
+                                {{ post.title }}
+                            </p>
+                        </a>
+                        <p class="date_news_footer">
+                            {{ post.published_date|date:"d M. Y"}}
+                        </p>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+                <div class="col-sm-4 col-md-4 col-xl-2">
+                    <div class="head_info_footer">
+                        <p class="name_info_block">
+                            Информация
+                        </p>
+                    </div>
+                    <div class="box_footer_info">
+                        <a href="http://naks.ru" class="point_grey">
+                            <p class="footer_info_link">
+                                Национальное Агентство
+                                Контроля Сварки
+                            </p>
+                        </a>
+                    </div>
+                    <div class="box_footer_info">
+                        <a href="http://bewelder.ru" class="point_grey">
+                            <p class="footer_info_link">
+                                Поиск работы <br> в области сварки
+                            </p>
+                        </a>
+                    </div>
+                    <div class="box_footer_info">
+                        <a href="http://svarka.naks.ru" class="point_grey">
+                            <p class="footer_info_link">
+                                Журнал сварка <br> и диагностика
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-xl-2">
+
+                    <div class="basement_block_contacti">
+                        <p class="basement_contacti">
+                            Центр по аттестации сварщиков и специалистов сварочного производства (ССР-3ГАЦ):
+                        </p>
+                        <p class="basement_phone">
+                            (3842) 44-14-92
+                        </p>
+                        <div class="line_basement"></div>
+                        <p class="basement_contacti">
+                                Центр по аттестации сварочных технологий (АЦСТ-90):
+                        </p>
+                        <p class="basement_phone">
+                                (3842) 44-14-91
+                        </p>
+                        <div class="line_basement"></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-xl-2">
+                    <div class="basement_block_contacti">
+                        <p class="basement_contacti">
+                                Центры по аттестации <br> сварочного <br> оборудования (АЦСО-82):
+                        </p>
+                        <p class="basement_phone">
+                                (3842)44-14-94
+                        </p>
+                        <div class="line_basement"></div>
+                        <p class="basement_contacti">
+                                Центры по аттестации сварочных материалов (АЦСМ-46):
+                        </p>
+                        <p class="basement_phone">
+                                (3842)44-14-91
+                        </p>
+                        <div class="line_basement"></div>
+                    </div>
+                    <div class="enter_system_edo">
+                            <a href="https://ac.naks.ru/" class="enter_system_link" target="_blank">
+                                Войти в систему ЭДО</a>
+                        </div>
+                </div>
+               
+            </div>       
+        </div>
+    </div>
+
+    <div class="basement_footer">
+        <div class="container">
+            <div class="line_footer_basement"></div>
+            <div class="box_basement">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-xl-4 col-md-4">
+                        <p class="basement_text_prava_kompany">
+                            © 2019 Кузбасский центр сварки и контроля &nbsp;| &nbsp; Все права защищены
+                        </p>
+                    </div>
+                    <div class="col-xl-3 col-md-4">
+                        <a href="{% url 'political' %}" class="political_konf" target="_blank">
+                            Политика конфиденциальности
+                        </a>
+                    </div>
+
+                    <div class="col-xl-5">
+                        <div class="razrabotano_basement_footer">
+                            <a href="http://www.naks.ru/naksmedia/" target="_blank" class="razrabotano__v__naks__media">
+                                Разработано в - НАКС Медиа</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

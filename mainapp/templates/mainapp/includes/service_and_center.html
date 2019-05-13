@@ -1,0 +1,75 @@
+{% load link_holders %}
+{% load static %}
+<div class="box_content_include">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="headline_box_content">
+                    <p class="headline_name_box">
+                        О Компании
+                    </p>
+                    <p class="head_box_content_small_text">
+                        Кузбасский центр сварки и контроля
+                    </p>
+                </div>
+                <div class="box_content_center">
+                    <p class="content_center_text">
+                        В реестре системы аттестации сварочного производства (САСв) зарегистрированы: Центр специальной
+                        (объектноориентированной)
+                        подготовки сварщиков и специалистов сварочного производства ССР-3ЦСП; Головной аттестационный
+                        центр сварщиков и специалистов сварочного производства ССР-3ГАЦ; Центр по аттестации сварочных
+                        материалов АЦСМ-46; Центр по аттестации сварочного оборудования АЦСО-82; Центр по аттестации
+                        сварочных технологий АЦСТ-90.
+                    </p>
+                    <p class="content_center_text important_text">
+                        В штате сотрудников ООО «КЦСК» работают известные в России и за рубежом ученые, опытные инженеры
+                        и специалисты, преподаватели университетов и колледжей Кузбасса. Все процедуры аттестации
+                        регистрируются в реестре НАКС: www.naks.ru.
+                    </p>
+                    <button class="center_podrobnee">
+                        <a href="{% url 'center_info' %}#page_top" class="center_podrobnee_link">
+                            Подробнее
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-1"></div>
+            <div class="col-xl-6">
+                <div class="headline_box_content">
+                    <p class="headline_name_box">
+                        Услуги центра
+                    </p>
+                    <p class="head_box_content_small_text">
+                        Вы можете подробнее ознакомиться с основными направлениями деятельности нашего центра
+                    </p>
+                </div>
+                <div class="block_service">
+                    <div class="service_link">
+                        <ul class="list_link">
+                            <li>
+                                <a  href="{% link_holder 'ATCSM' %}">{% title_holder 'ATCSM' %}</a>                             
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'ATCSO' %}">{% title_holder 'ATCSO' %}</a>                             
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'ATCSP' %}">{% title_holder 'ATCSP' %}</a>                             
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'ATCST' %}">{% title_holder 'ATCST' %}</a>                             
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'MVC' %}">{% title_holder 'MVC' %}</a>                             
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'ATTSM' %}">{% title_holder 'ATTSM' %}</a>                             
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

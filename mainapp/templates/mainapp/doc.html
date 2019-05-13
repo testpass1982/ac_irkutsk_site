@@ -1,0 +1,133 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="bg_header_inner_page" id="page_top">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4">
+        <div class="headline_bg_inner_page">
+          Документы
+        </div>
+        <button class="back_to_home_page">
+          <a href="{% url 'index' %}" class="link_to_home_page">
+            <img src="/static/img/back_to_page.png" class="img_back_to_page" alt="">На главную
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box_content_in_pages">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-3">
+        <p class="headline_doc">Список документов</p>
+        <p class="doc_name_list">Наименование документов</p>
+      </div>
+    </div>
+    <div class="box_document">
+      <div class="row">
+        <div class="col-xl-7">
+        <div class="headline_doc_section">Документы ССР-3ГАЦ (аттестация персонала)</div>
+          {% for doc in ssr_3gac_documents %}
+          <div class="col-sm-6 col-12">
+            <a href="{{ doc.document }}" download="">
+              <div class="box_doc_file" title="Скачать">
+                <div class="{% if doc.extension == '.docx' %}icon_word{% else %}icon_pdf{% endif %}"></div>
+                <p class="doc_text_name">
+                  {{ doc.title|truncatechars:35 }}
+                  {{ doc.extension }}
+                </p>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+          <div class="line_center"></div>
+          <div class="headline_doc_section">Документы ССР-3ЦСП (специальная подготовка)</div>
+          {% for doc in ssr_3csp_documents %}
+          <div class="col-sm-6 col-12">
+            <a href="{{ doc.document }}" download="">
+              <div class="box_doc_file" title="Скачать">
+                <div class="{% if doc.extension == '.docx' %}icon_word{% else %}icon_pdf{% endif %}"></div>
+                <p class="doc_text_name">
+                  {{ doc.title|truncatechars:35 }}
+                  {{ doc.extension }}
+                </p>
+              </div>
+            </a>          
+          </div>
+          {% endfor %}
+          <div class="line_center"></div>
+          <div class="headline_doc_section">Документы АЦСМ-46 (Аттестация сварочных материалов)</div>
+          {% for doc in acsm_46_documents %}
+          <div class="col-sm-6 col-12">
+            <a href="{{ doc.document }}" download="">
+              <div class="box_doc_file" title="Скачать">
+                <div class="{% if doc.extension == '.docx' %}icon_word{% else %}icon_pdf{% endif %}"></div>
+                <p class="doc_text_name">
+                  {{ doc.title|truncatechars:35 }}
+                  {{ doc.extension }}
+                </p>
+              </div>
+            </a>          
+          </div>
+          {% endfor %}
+          <div class="line_center"></div>
+          <div class="headline_doc_section">Документы АЦСО-82 (Аттестация сварочного оборудования)</div>
+          {% for doc in acso_82_documents %}
+          <div class="col-sm-6 col-12">
+            <a href="{{ doc.document }}" download="">
+              <div class="box_doc_file" title="Скачать">
+                <div class="{% if doc.extension == '.docx' %}icon_word{% else %}icon_pdf{% endif %}"></div>
+                <p class="doc_text_name">
+                  {{ doc.title|truncatechars:35 }}
+                  {{ doc.extension }}
+                </p>
+              </div>
+            </a>          
+          </div>
+          {% endfor %}
+          <div class="line_center"></div>
+          <div class="headline_doc_section">Документы АЦСТ-90 (Аттестация сварочных технологий)</div>
+          {% for doc in acst_90_documents %}
+          <div class="col-sm-6 col-12">
+            <a href="{{ doc.document }}" download="">
+              <div class="box_doc_file" title="Скачать">
+                <div class="{% if doc.extension == '.docx' %}icon_word{% else %}icon_pdf{% endif %}"></div>
+                <p class="doc_text_name">
+                  {{ doc.title|truncatechars:35 }}
+                  {{ doc.extension }}
+                </p>
+              </div>
+            </a>          
+          </div>
+          {% endfor %}
+          <div class="line_center"></div>
+          <div class="headline_doc_section">Документы ЦОК-12 (Центр оценки квалификаций)</div>
+          {% for doc in cok_12_documents %}
+          <div class="col-sm-6 col-12">
+            <a href="{{ doc.document }}" download="">
+              <div class="box_doc_file" title="Скачать">
+                <div class="{% if doc.extension == '.docx' %}icon_word{% else %}icon_pdf{% endif %}"></div>
+                <p class="doc_text_name">
+                  {{ doc.title|truncatechars:35 }}
+                  {{ doc.extension }}
+                </p>
+              </div>
+            </a>          
+          </div>
+          {% endfor %}
+          <div class="line_center"></div>
+        </div>
+        <div class="col-xl-1"></div>
+        <div class="col-xl-2 dotted_left_border">
+          {% include 'mainapp/includes/side_panel_links_doc.html' %}
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

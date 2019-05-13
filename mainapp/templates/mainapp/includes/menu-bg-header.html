@@ -1,0 +1,83 @@
+{% load link_holders %}
+{% load static %}
+
+<div class="menu__background">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-xl-12 no-otstup">
+        <div class="menu__navbar">
+          <!--Navbar-->
+          <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+            <!-- Navbar brand -->
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+              aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+
+              <!-- Links -->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'index' %}">Главная
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'center_info' %}#page_top">Центр аттестации
+                      <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Услуги
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"
+                      href="{% link_holder 'ATCSM' %}">{% title_holder 'ATCSM' %}</a>
+                    <a class="dropdown-item" href="{% link_holder 'ATCSP' %}">{% title_holder 'ATCSP' %} </a>
+                    <a class="dropdown-item" href="{% link_holder 'ATCSO' %}">{% title_holder 'ATCSO' %}</a>
+                    <a class="dropdown-item" href="{% link_holder 'ATCST' %}">{% title_holder 'ATCST' %}</a>
+                    <a class="dropdown-item" href="{% link_holder 'ATTSM ' %}">{% title_holder 'ATTSM ' %}</a>
+                    <a class="dropdown-item" href="{% link_holder 'MVC' %}">{% title_holder 'MVC' %}</a>
+
+                  </div>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'cok' %}#page_top">Оценка квалификации в области сварки
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'doc' %}#page_top">Документы
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'contacts' %}#page_top">Контакты
+                      <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+              </ul>
+              <button class="request_for_menu">
+                <a href="" data-toggle="modal" data-target="#modal-statement" class="request_button_for_menu">Подать
+                  заявку</a>
+              </button>
+            </div>
+          </nav>
+
+          <!--/.Navbar-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

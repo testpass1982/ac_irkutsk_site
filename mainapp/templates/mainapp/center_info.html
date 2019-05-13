@@ -1,0 +1,759 @@
+    {% extends 'mainapp/base.html' %}
+    {% load static %}
+    {% block content %}
+    <div class="bg_header_inner_page" id="page_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4">
+                    <div class="headline_bg_inner_page">
+                        Информация о центре
+                    </div>
+                    <p class="subtitle_inner_page_text">
+                        ООО «Кузбасский центр сварки и контроля»
+                    </p>
+                    <button class="back_to_home_page">
+                        <a href="{% url 'index' %}" class="link_to_home_page">
+                            <img src="/static/img/back_to_page.png" class="img_back_to_page" alt="">На главную
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+   <div class="box_content_in_pages">
+        <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="box_img_center">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                                          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>                                </ol>
+                                        <div class="carousel-inner">
+                                          <div class="carousel-item active">
+                                            <img src="/static/img/center.jpg" class="d-block w-100" alt="...">
+                                          </div>
+                                          <div class="carousel-item">
+                                            <img src="/static/img/center_2.jpg" class="d-block w-100" alt="...">
+                                          </div>
+                                          <div class="carousel-item">
+                                            <img src="/static/img/center_3.jpg" class="d-block w-100" alt="...">
+                                          </div>
+                                          <div class="carousel-item">
+                                            <img src="/static/img/center_4.jpg" class="d-block w-100" alt="...">
+                                          </div>
+                                          <div class="carousel-item">
+                                            <img src="/static/img/center_5.jpg" class="d-block w-100" alt="...">
+                                          </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                          <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                          <span class="sr-only">Next</span>
+                                        </a>
+                                      </div>
+                        </div>
+                        <div class="headline_center">
+                            Кузбасский центр сварки и контроля
+                        </div>
+                        <div class="box_naks_organization">
+                            Организация является членом <br>
+                            Саморегулируемая организация Ассоциация «НАКС».
+                            <div class="naks_link">
+                                <a href="http://www.naks.ru" target="_blank"
+                                    title="Национальное Агентство Контроля Сварки">www.naks.ru</a>
+                                <a href="http://www.spks.naks.ru" class="spks_link" target="_blank"
+                                    title="Совет по профессиональным квалификациям в области сварки">www.spks.naks.ru</a>
+                            </div>
+                        </div>
+                        <div class="box_center_content">
+                            <p class="content_center_text">
+                                Деятельность ООО «Кузбасский центр сварки и контроля» направлена на обеспечение качества
+                                сварочного производства технических устройств опасных производственных объектов, требования к
+                                которым установлены нормативными документами Ростехнадзора и Системы аттестации сварочного
+                                производства (САСв).
+                            </p>
+                            <p class="content_center_text">
+                                В реестре системы аттестации сварочного производства (САСв) зарегистрированы: Центр специальной
+                                (объектноориентированной)
+                                подготовки сварщиков и специалистов сварочного производства ССР-3ЦСП; Головной аттестационный
+                                центр сварщиков и специалистов сварочного производства ССР-3ГАЦ; Центр по аттестации сварочных
+                                материалов АЦСМ-46; Центр по аттестации сварочного оборудования АЦСО-82; Центр по аттестации
+                                сварочных технологий АЦСТ-90.
+                            </p>
+                            <p class="content_center_text">
+                                В штате сотрудников ООО «КЦСК» работают известные в России и за рубежом ученые, опытные инженеры
+                                и специалисты, преподаватели университетов и колледжей Кузбасса. Все процедуры аттестации
+                                регистрируются в реестре НАКС: www.naks.ru.
+                            </p>
+                            <p class="content_center_text">
+                                В своей деятельности при аттестации специалистов сварочного производства, материалов,
+                                оборудования и технологий сотрудники Центра пользуются базой методических документов,
+                                разработанных НАКС. Системный подход НАКС к решению проблем качества в сварочном производстве
+                                позволяет ООО «КЦСК» на протяжении 20 лет успешно решать поставленные цели и задачи.
+                                ООО «КЦСК» под руководством НАКС расширяет сферы свой деятельности.
+                            </p>
+                        </div>
+                        <div class="headline_center">
+                            Политика ООО «КЦСК» в области качества
+                        </div>
+                        <div class="box_center_content">
+                            <p class="content_center_text">
+                                <b>Стратегическая цель – максимальная эффективность,</b> результативность, лидерство при
+                                выполнении работ по Аттестации сварочного производства в Кузбасском регионе и на российском
+                                рынке, интеграция в мировую экономику.
+                            </p>
+                            <p class="content_center_text">
+                                В реестре системы аттестации сварочного производства (САСв) зарегистрированы: Центр специальной
+                                (объектноориентированной)
+                                подготовки сварщиков и специалистов сварочного производства ССР-3ЦСП; Головной аттестационный
+                                центр сварщиков и специалистов сварочного производства ССР-3ГАЦ; Центр по аттестации сварочных
+                                материалов АЦСМ-46; Центр по аттестации сварочного оборудования АЦСО-82; Центр по аттестации
+                                сварочных технологий АЦСТ-90.
+                            </p>
+                            <div class="subtitle_center">
+                                Для этого ООО «КЦСК» решает следующие задачи:
+                            </div>
+                            <div class="box_content_step">
+                                <ul class="list_step_content_center">
+                                    <li> - непрерывное улучшение качества выполняемых работ;</li>
+                                    <li> - освоение новых видов работ в соответствии с ожидаемыми потребностями;</li>
+                                    <li> - максимальное удовлетворение запросов потребителей;</li>
+                                    <li> - максимальное выполнение ожиданий заинтересованных сторон.</li>
+                                </ul>
+                            </div>
+                            <div class="subtitle_center">
+                                Мы достигаем реализации поставленных задач путем:
+                            </div>
+                            <div class="box_content_step">
+                                <ul class="list_step_content_center">
+                                    <li>• Совершенствования действующей системы менеджмента качества и внедрения международных
+                                        стандартов серии ИСО 9000;</li>
+                                    <li>• Постоянного исследования и расширения рынков сбыта за счет освоения новых видов услуг;
+                                    </li>
+                                    <li>• Применения современных технологий для усовершенствования работ и услуг;</li>
+                                    <li>• Постоянного совершенствования процессов, технологий, производств, методов исследования
+                                        и контроля, применяемых при аттестации сварочного производства;</li>
+                                    <li>• Обеспечения требуемыми ресурсами в необходимых объемах и хорошего качества;</li>
+                                    <li>• Систематического повышения профессиональной подготовки персонала;</li>
+                                    <li>• Совершенствования мотивации творческой активности работников;</li>
+                                    <li>• Пропаганды деятельности для создания единого корпоративного духа и привлечения
+                                        заинтересованных сторон;</li>
+                                    <li>• Разъяснения Политики в области качества, ее реализации на всех уровнях управления ООО
+                                        «КЦСК» и создание условий, обеспечивающих осознанное вовлечение работников в процессы
+                                        менеджмента качества;</li>
+                                    <li>• Совершенствование системы аттестации сварочного производства, вывод ее на качественно
+                                        новый уровень;</li>
+                                    <li>• Соблюдения всех требований законодательства Российской Федерации, требований
+                                        нормативных документов в части промышленной безопасности при проведении работ по
+                                        аттестации сварочного производства;</li>
+                                    <li>• Гарантирования качества проводимых работ по аттестации сварочного производства на срок
+                                        действия выдаваемых документов по аттестации сварочного производства.</li>
+                                </ul>
+        
+                            </div>
+                            <div class="subtitle_center">
+                                Наши достижения за 20 лет:
+                            </div>
+                            <div class="box_content_step">
+                                <p class="content_center_text border_left_step">
+                                    - Аттестовано для предприятий Кемеровской области сварщиков и специалистов сварочного
+                                    производства более 12 тысяч.
+                                </p>
+                                <p class="content_center_text border_left_step">
+                                    - Для промышленных предприятий Кемеровской области аттестовано 940 технологий.
+                                </p>
+                                <p class="content_center_text border_left_step">
+                                    - Аттестовано 99 марок сварочных материалов и 1338 единиц сварочного оборудования.
+                                </p>
+                                <p class="content_center_text border_left_step">
+                                    23 января 2014 года получена Премия Правительства Российской Федерации в области качества
+                                    2012 года.
+                                </p>
+                                <p class="content_center_text border_left_step">
+                                    27 мая 2014 года СРО НП НАКС совместно с Аттестационными центрами ‒ лауреат Премии
+                                    Содружества Независимых Государств 2013 года.
+                                </p>
+                                <p class="content_center_text border_left_step">
+                                    В апреле 2015 года ООО «КЦСК» прошло сертификацию в системе менеджмента качества по ИСО 9001
+                                    в DVS zert.
+                                </p>
+                                <p class="content_center_text border_left_step">
+                                    В 2015 году ООО «КЦСК» аккредитован в качестве Центра оценки квалификаций (ЦОК) Системы
+                                    профессиональных квалификаций в области сварки и родственных процессов, неразрушающего
+                                    контроля и разрушающих испытаний сварных соединений.
+                                </p>
+                                <p class="content_center_text border_left_step">
+                                    В 2015 году СРО НП «НАКС» совместно с Аттестационными центрами был принят полноправным
+                                    обществом-членом от России в Международный институт сварки (МИС).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-1"></div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="headline_center_right_column">
+                                Разрешительные документы
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+                                <div class="box_doc_center">
+                                    <p class="imglist" style="max-width: 1000px;">
+                                        <a href="{% static 'img/acsm.jpg' %}" data-fancybox="images"
+                                            data-caption="Backpackers following a dirt trail">
+                                            <img src="{% static 'img/acsm.jpg' %}" class="img-fluid img_center_doc" />
+                                        </a>
+                                    </p>
+                                    <p class="signature_for_doc">
+                                        Допуск к аттестации сварочных материалов
+                                        (лист - 1)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="box_doc_center">
+                                    <p class="imglist" style="max-width: 1000px;">
+                                        <a href="{% static 'img/acsm_2.jpg' %}" data-fancybox="images"
+                                            data-caption="Backpackers following a dirt trail">
+                                            <img src="{% static 'img/acsm_2.jpg' %}" class="img-fluid img_center_doc" />
+                                        </a>
+                                    </p>
+                                    <p class="signature_for_doc">
+                                        Допуск к аттестации сварочных материалов
+                                        (лист - 2)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="box_doc_center">
+                                    <p class="imglist" style="max-width: 1000px;">
+                                        <a href="{% static 'img/acso.jpg' %}" data-fancybox="images"
+                                            data-caption="Backpackers following a dirt trail">
+                                            <img src="{% static 'img/acso.jpg' %}" class="img-fluid img_center_doc" />
+                                        </a>
+                                    </p>
+                                    <p class="signature_for_doc">
+                                        Допуск к аттестации сварочного оборудования
+                                        (лист - 1)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+                                <div class="box_doc_center">
+                                    <p class="imglist" style="max-width: 1000px;">
+                                        <a href="{% static 'img/acsm_2.jpg' %}" data-fancybox="images"
+                                            data-caption="Backpackers following a dirt trail">
+                                            <img src="{% static 'img/acsm_2.jpg' %}" class="img-fluid img_center_doc" />
+                                        </a>
+                                    </p>
+                                    <p class="signature_for_doc">
+                                        Допуск к аттестации сварочных материалов
+                                        (лист - 2)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="box_doc_center">
+                                    <p class="imglist" style="max-width: 1000px;">
+                                        <a href="{% static 'img/acst.jpg' %}" data-fancybox="images"
+                                            data-caption="Backpackers following a dirt trail">
+                                            <img src="{% static 'img/acst.jpg' %}" class="img-fluid img_center_doc" />
+                                        </a>
+                                    </p>
+                                    <p class="signature_for_doc">
+                                        Допуск к аттестации сварочных технологий
+                                        (лист - 1)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="box_doc_center">
+                                    <p class="imglist" style="max-width: 1000px;">
+                                        <a href="{% static 'img/acst_2.jpg' %}" data-fancybox="images"
+                                            data-caption="Backpackers following a dirt trail">
+                                            <img src="{% static 'img/acst_2.jpg' %}" class="img-fluid img_center_doc" />
+                                        </a>
+                                    </p>
+                                    <p class="signature_for_doc">
+                                        Допуск к аттестации сварочного оборудования
+                                        (лист - 2)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+                                <div class="box_doc_center">
+                                    <p class="imglist" style="max-width: 1000px;">
+                                        <a href="{% static 'img/ccp.jpg' %}" data-fancybox="images"
+                                            data-caption="Backpackers following a dirt trail">
+                                            <img src="{% static 'img/ccp.jpg' %}" class="img-fluid img_center_doc" />
+                                        </a>
+                                    </p>
+                                    <p class="signature_for_doc">
+                                        Допуск к аттестации сварщиков и специалистов свар.произв
+                                        (лист - 1)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="box_doc_center">
+                                    <p class="imglist" style="max-width: 1000px;">
+                                        <a href="{% static 'img/ccp_2.jpg' %}" data-fancybox="images"
+                                            data-caption="Backpackers following a dirt trail">
+                                            <img src="{% static 'img/ccp_2.jpg' %}" class="img-fluid img_center_doc" />
+                                        </a>
+                                    </p>
+                                    <p class="signature_for_doc">
+                                        Допускк аттестации сварщиков и специалистов свар.произв
+                                        (лист - 2)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="box_doc_center">
+                                    <p class="imglist" style="max-width: 1000px;">
+                                        <a href="{% static 'img/ccp_3.jpg' %}" data-fancybox="images"
+                                            data-caption="Backpackers following a dirt trail">
+                                            <img src="{% static 'img/ccp_3.jpg' %}" class="img-fluid img_center_doc" />
+                                        </a>
+                                    </p>
+                                    <p class="signature_for_doc">
+                                        Допускк аттестации сварщиков и специалистов свар.произв
+                                        (лист - 3)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line_center"></div>
+                        <div class="box_right_personal_center">
+                            <div class="row">
+                                <div class="headline_center_right_column">
+                                    Руководящий состав
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Смирнов Александр Николаевич
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Директор
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-93
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:galvas@gmail.com" title="Написать письмо">galvas@gmail.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-sm-6">
+        
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Цыганкова Галина Васильевна
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Секретарь
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-93
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:galvas@gmail.com" title="Написать письмо">galvas@gmail.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Князьков Виктор Леонидович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Технический директор
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-91
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:vntk50@mail.ru" title="Написать письмо">vntk50@mail.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-sm-6">
+        
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Казанцева Елена Витальевна
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Главный бухгалтер
+                                            </p>
+                                            <p class="number_personal_center">
+                                                (3842)44-14-90
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:azalia-26@mail.ru " title="Написать письмо">azalia-26@mail.ru
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Наймушина Ирина Петровна
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Отдел кадров
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-90
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:azalia-26@mail.ru" title="Написать письмо">azalia-26@mail.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row">
+                                <div class="headline_center_right_column">
+                                    Центр по аттестации сварщиков и специалистов сварочного производства (ССР-3ГАЦ)
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Фольмер Сергей Владимирович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Руководитель аттестационного центра
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842) 44-14-92
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:650055sv@mail.ru" title="Написать письмо">650055sv@mail.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Удалов Вадим Федорович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Заместитель руководителя центра
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:vadic.56@mail.ru" title="Написать письмо">vadic.56@mail.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Горина Елена Сергеевна
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Специалист по организационной работе
+                                                (Выдача аттестационных удостоверений сварщиков и специалистов сварочного
+                                                производства)
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:e-gorina@inbox.ru" title="Написать письмо">e-gorina@inbox.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Наймушин Степан Андреевич
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Заявки на аттестацию сварочного персонала
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:ssr-2gac@mail.ru" title="Написать письмо">ssr-2gac@mail.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row">
+                                <div class="headline_center_right_column">
+                                    Центр по аттестации сварочных технологий (АЦСТ-90)
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Князьков Виктор Леонидович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Руководитель аттестационного центра
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-91
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:vntk50@mail.ru" title="Написать письмо">vntk50@mail.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Князькова Наталья Владимировна
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Заявки на аттестацию технологий сварки
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-91
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:kcs_natalya@mail.ru"
+                                                    title="Написать письмо">kcs_natalya@mail.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row">
+                                <div class="headline_center_right_column">
+                                    Центры по аттестации сварочного оборудования (АЦСО-82)
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Князьков Константин Викторович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Руководитель аттестационного центра
+                                                (заявки на аттестацию сварочного оборудования)
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-94
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:koss233@gmail.com" title="Написать письмо">
+                                                    koss233@gmail.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row">
+                                <div class="headline_center_right_column">
+                                    Центры по аттестации сварочных материалов (АЦСМ-46)
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Князьков Виктор Леонидович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Руководитель аттестационного центра
+                                                (заявки на аттестацию сварочных материалов)
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-91
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:vntk50@mail.ru" title="Написать письмо">vntk50@mail.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row">
+                                <div class="headline_center_right_column">
+                                    Центр оценки квалификаций 42.002
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Князьков Виктор Леонидович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Руководитель центра
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-91
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:42.002@mail.ru" title="Написать письмо">42.002@mail.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Фольмер Сергей Владимирович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Заявки на оценку квалификации
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-92
+                                            </p>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row">
+                                <div class="headline_center_right_column">
+                                    Лаборатория контроля металлов
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Шульгин Александр Анатольевич
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Начальник Лаборатории неразрушающего контроля
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-16-35
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto: lkm.kcsk@gmail.com"
+                                                    title="Написать письмо">lkm.kcsk@gmail.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Фольмер Сергей Владимирович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Заявки на оценку квалификации
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-92
+                                            </p>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_center"></div>
+                            <div class="row">
+                                <div class="headline_center_right_column">
+                                    Лаборатория разрушающих испытаний
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Абабков Николай Викторович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Начальник Лаборатории разрушающих испытаний
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-16-35,
+                                            </p>
+                                            <p class="mail">
+                                                <a href="mailto:n.ababkov@rambler.ru"
+                                                    title="Написать письмо">n.ababkov@rambler.ru</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="box_personal_center">
+                                        <div class="box_personal">
+                                            <p class="name_personal_center">
+                                                Фольмер Сергей Владимирович
+                                            </p>
+                                            <p class="position_personal_center">
+                                                Заявки на оценку квалификации
+                                            </p>
+                                            <p class="number_personal_center">
+                                                тел. (3842)44-14-92
+                                            </p>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+   </div>
+    {% endblock %}
