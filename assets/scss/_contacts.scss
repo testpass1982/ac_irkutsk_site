@@ -29,12 +29,7 @@
     }
 }
 
-.dotted_left_border{
-    border-left: 1px dotted #ccc;
-    @media screen and (max-width: 1199px) {
-      display: none;
-    }
-}
+
 
 .dotted_border_bottom{
     border-bottom: 1px dotted #ccc;
@@ -49,6 +44,7 @@
 }
 
 .phone_contacti{
-    font-size: 20px;
+    font-size: 26px;
     color: #000000;
+    margin-bottom: 15px;
 }

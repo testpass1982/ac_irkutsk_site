@@ -19,7 +19,7 @@
     border-bottom: none;
     background-color: #ffffff;
     color: #fff;
-    border-top: 15px solid #50b3ff;
+    border-top: 15px solid #4c6c9c;
 }
 
 .modal-footer {
@@ -104,7 +104,7 @@ input[type="checkbox"] {
 .modal-title {
     margin-bottom: 10px;
     font-size: 28px;
-    font-weight: 200;
+    font-weight: 400;
     color: #000;
 }
 
@@ -165,7 +165,7 @@ input~label[for="sogl"] {
 }
 
 .button__to__send_zayavka__formmodal {
-    background-color: #50b3ff;
+    background-color: #4c6c9c;
     border: none;
     color: #fff;
     font-size: 16px;
@@ -174,11 +174,8 @@ input~label[for="sogl"] {
     text-transform: uppercase;
     padding: 12px 45px;
     &:hover{
-        background-color: #62b9fc;
-    }
-    &:active{
-        background-color: #3987c2;
-    }
+        background-color: #4d78b9;
+    }  
     @media screen and (max-width: 450px) {
         padding: 15px;
     }
@@ -244,8 +241,9 @@ hr {
 }
 
 .modal__title__small__text {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
+    color: #242424;
 }
 
 .accompanying__message__bold {

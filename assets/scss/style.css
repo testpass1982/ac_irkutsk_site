@@ -61,9 +61,10 @@
       display: none; } }
 
 .menu__background {
-  background-color: #33465f;
+  background-color: #4c6c9c;
   padding: 20px 0px 20px 0px;
-  font-weight: 300; }
+  font-weight: 300;
+  text-transform: uppercase; }
   @media screen and (max-width: 992px) {
     .menu__background {
       padding: 15px 0px;
@@ -119,7 +120,6 @@
   color: #ecf5fe;
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.09);
   border: none;
-  border-radius: 15px;
   text-transform: initial;
   padding: 12px; }
   @media screen and (max-width: 320px) {
@@ -215,19 +215,17 @@ input[type="search"]::placeholder {
   .input__group {
     text-align: left; } }
 
-.bg_carousel_content_color {
-  background-color: #20202085; }
+.bg_color {
+  text-align: center;
+  background-color: #202020bb;
+  padding: 50px; }
+  @media screen and (max-width: 576px) {
+    .bg_color {
+      padding: 25px;
+      text-align: center; } }
 
-.bg_carousel_content_one {
-  background: url(/static/img/background.jpg) no-repeat;
-  background-size: cover; }
-
-.bg_carousel_content_two {
-  background: url(/static/img/nerazrush.jpg) no-repeat;
-  background-size: cover; }
-
-.bg_carousel_content_three {
-  background: url(/static/img/background.jpg) no-repeat;
+.bg_image {
+  background: url(/static/img/bg_center.png) no-repeat;
   background-size: cover; }
 
 .system_button a {
@@ -253,7 +251,7 @@ input[type="search"]::placeholder {
       padding: 20px 0px 20px; } }
 
 .headline_bg_content {
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 350;
   color: #fff;
   line-height: 1.6; }
@@ -261,34 +259,21 @@ input[type="search"]::placeholder {
     .headline_bg_content {
       font-size: 18px; } }
 
-.head_bg_text_small {
-  font-size: 28px;
+.head_bg_text_small_two {
+  font-size: 18px;
   font-weight: 300;
   color: #fff;
   line-height: 1.8;
-  margin-top: 20px; }
-  @media screen and (max-width: 992px) {
-    .head_bg_text_small {
-      font-size: 18px;
-      line-height: 1.2; } }
-
-.head_bg_text_small_two {
-  font-size: 22px;
-  font-weight: 350;
-  color: #fff;
-  line-height: 1.6;
   margin-top: 10px;
   margin-bottom: 25px; }
   @media screen and (max-width: 992px) {
     .head_bg_text_small_two {
       font-size: 16px; } }
 
-.head_bg_box_button {
-  margin-bottom: 55px; }
-  @media screen and (max-width: 992px) {
-    .head_bg_box_button {
-      text-align: center;
-      margin-bottom: 10px; } }
+@media screen and (max-width: 992px) {
+  .head_bg_box_button {
+    text-align: center;
+    margin-bottom: 10px; } }
 
 .request {
   background: transparent;
@@ -305,7 +290,7 @@ input[type="search"]::placeholder {
     font-weight: 400; }
 
 .request_button {
-  background-color: #2660ad;
+  background-color: #4c6c9c;
   border: none;
   padding: 12px 50px;
   text-decoration: none; }
@@ -399,6 +384,25 @@ input[type="search"]::placeholder {
   transform: rotate(0deg);
   width: 45px;
   height: 45px; }
+
+.org_member {
+  font-size: 16px;
+  font-weight: 350;
+  color: #fff;
+  text-align: center; }
+
+.naks__web a {
+  text-decoration: none;
+  color: #ffffff; }
+  .naks__web a:hover {
+    color: #0087e0; }
+
+.naks__web {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 350;
+  margin-bottom: 10px;
+  margin-bottom: 25px; }
 
 .box_footer_bg {
   padding: 80px; }
@@ -588,7 +592,7 @@ input[type="search"]::placeholder {
   border-bottom: none;
   background-color: #ffffff;
   color: #fff;
-  border-top: 15px solid #50b3ff; }
+  border-top: 15px solid #4c6c9c; }
 
 .modal-footer {
   justify-content: flex-start;
@@ -655,7 +659,7 @@ input[type="checkbox"] {
 .modal-title {
   margin-bottom: 10px;
   font-size: 28px;
-  font-weight: 200;
+  font-weight: 400;
   color: #000; }
 
 @media screen and (max-width: 450px) {
@@ -701,7 +705,7 @@ input ~ label[for="sogl"] {
   padding: 0px; }
 
 .button__to__send_zayavka__formmodal {
-  background-color: #50b3ff;
+  background-color: #4c6c9c;
   border: none;
   color: #fff;
   font-size: 16px;
@@ -710,9 +714,7 @@ input ~ label[for="sogl"] {
   text-transform: uppercase;
   padding: 12px 45px; }
   .button__to__send_zayavka__formmodal:hover {
-    background-color: #62b9fc; }
-  .button__to__send_zayavka__formmodal:active {
-    background-color: #3987c2; }
+    background-color: #4d78b9; }
   @media screen and (max-width: 450px) {
     .button__to__send_zayavka__formmodal {
       padding: 15px; } }
@@ -763,8 +765,9 @@ hr {
   font-weight: 350; }
 
 .modal__title__small__text {
-  font-size: 18px;
-  font-weight: 500; }
+  font-size: 16px;
+  font-weight: 400;
+  color: #242424; }
 
 .accompanying__message__bold {
   font-size: 18px;
@@ -968,7 +971,7 @@ body {
 
 .bg_info_box {
   padding: 25px 0px 25px;
-  background-color: #e7f1ff; }
+  background-color: #d4d4d4; }
 
 .info_box_text {
   font-size: 13px;
@@ -1269,8 +1272,8 @@ body {
   color: #000000; }
 
 .important_text {
-  font-weight: 400;
-  color: #6184b1; }
+  font-weight: 450;
+  color: #2f3741; }
 
 .center_podrobnee {
   background-color: transparent;
@@ -1602,12 +1605,6 @@ body {
       margin-top: 15px;
       margin-bottom: 0px; } }
 
-.dotted_left_border {
-  border-left: 1px dotted #ccc; }
-  @media screen and (max-width: 1199px) {
-    .dotted_left_border {
-      display: none; } }
-
 .dotted_border_bottom {
   border-bottom: 1px dotted #ccc;
   margin-top: 15px;
@@ -1618,8 +1615,9 @@ body {
   font-weight: 450; }
 
 .phone_contacti {
-  font-size: 20px;
-  color: #000000; }
+  font-size: 26px;
+  color: #000000;
+  margin-bottom: 15px; }
 
 .owl-carousel a {
   text-decoration: none; }
