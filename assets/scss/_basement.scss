@@ -80,8 +80,8 @@ color: #fff;
 }
 
 .footer_info_link{
-    font-size: 14px;
-    color: #fff;
+    font-size: 12px;
+    color: rgb(156, 156, 156);
     margin-left: 15px;
 }
 
@@ -132,18 +132,19 @@ color: #fff;
 
 
 .basement_text_prava_kompany{
-    font-size: 12px;
+    font-size: 11px;
     color: #6f7379;    
     margin-bottom: 0px;
 }
 
-.political_konf{
-    font-size: 12px;
+.political_konf a{
+    font-size: 11px;
     color: #6f7379;    
     margin-bottom: 0px;
 }
 
 .razrabotano_basement_footer{
+    font-size: 11px;
     text-align: right;
     @media screen and (max-width: 435px) {
         text-align: center;
@@ -155,11 +156,40 @@ color: #fff;
 }
 
 
+.basement_number {
+    text-align: right;
+a{
+    font-size: 22px;
+    color: #fff;     
+}
+}
+
+.basement_mail {
+    text-align: right;
+    margin-bottom: 15px;  
+a{
+    font-size: 16px;
+    color: rgb(146, 146, 146);
+    text-align: right;
+    
+}
+}
+
+.basement_number_text{
+    font-size: 16px;
+    color: rgb(167, 167, 167);
+    text-align: right;   
+
+}
+
 .line_footer_basement{
     border-bottom: 0.5px solid #6f7379;
     width: 150px;
     margin-top: 25px;
    margin-bottom: 25px;
+   @media screen and (max-width: 435px) {
+    width: 100%;
+       }
 }
 
 .enter_system_edo::before {
@@ -167,7 +197,7 @@ color: #fff;
     position: absolute;
     width: 50px;
     height: 50px;
-    left: 0;
+    margin-left: -15px;
     margin-top: 5px;
     background: url(/static/img/enter_system.png) center 0 no-repeat;
   }
@@ -189,6 +219,7 @@ color: #fff;
   }
   
   .enter_system_edo {
+    text-align: right;
     @media screen and (max-width: 1200px) {
      margin-top: 25px;
      margin-bottom: 25px;

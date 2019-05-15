@@ -252,7 +252,7 @@ input[type="search"]::placeholder {
 
 .headline_bg_content {
   font-size: 30px;
-  font-weight: 350;
+  font-weight: 400;
   color: #fff;
   line-height: 1.6; }
   @media screen and (max-width: 992px) {
@@ -471,8 +471,8 @@ input[type="search"]::placeholder {
   background: url(/static/img/yellow_punkt.png) center 0 no-repeat; }
 
 .footer_info_link {
-  font-size: 14px;
-  color: #fff;
+  font-size: 12px;
+  color: #9c9c9c;
   margin-left: 15px; }
 
 .feedback_button_footer a {
@@ -510,16 +510,17 @@ input[type="search"]::placeholder {
       text-align: center; } }
 
 .basement_text_prava_kompany {
-  font-size: 12px;
+  font-size: 11px;
   color: #6f7379;
   margin-bottom: 0px; }
 
-.political_konf {
-  font-size: 12px;
+.political_konf a {
+  font-size: 11px;
   color: #6f7379;
   margin-bottom: 0px; }
 
 .razrabotano_basement_footer {
+  font-size: 11px;
   text-align: right; }
   @media screen and (max-width: 435px) {
     .razrabotano_basement_footer {
@@ -527,18 +528,40 @@ input[type="search"]::placeholder {
   .razrabotano_basement_footer a {
     color: #6f7379; }
 
+.basement_number {
+  text-align: right; }
+  .basement_number a {
+    font-size: 22px;
+    color: #fff; }
+
+.basement_mail {
+  text-align: right;
+  margin-bottom: 15px; }
+  .basement_mail a {
+    font-size: 16px;
+    color: #929292;
+    text-align: right; }
+
+.basement_number_text {
+  font-size: 16px;
+  color: #a7a7a7;
+  text-align: right; }
+
 .line_footer_basement {
   border-bottom: 0.5px solid #6f7379;
   width: 150px;
   margin-top: 25px;
   margin-bottom: 25px; }
+  @media screen and (max-width: 435px) {
+    .line_footer_basement {
+      width: 100%; } }
 
 .enter_system_edo::before {
   content: '';
   position: absolute;
   width: 50px;
   height: 50px;
-  left: 0;
+  margin-left: -15px;
   margin-top: 5px;
   background: url(/static/img/enter_system.png) center 0 no-repeat; }
 
@@ -556,10 +579,12 @@ input[type="search"]::placeholder {
       margin-top: 15px;
       margin-bottom: 15px; } }
 
-@media screen and (max-width: 1200px) {
-  .enter_system_edo {
-    margin-top: 25px;
-    margin-bottom: 25px; } }
+.enter_system_edo {
+  text-align: right; }
+  @media screen and (max-width: 1200px) {
+    .enter_system_edo {
+      margin-top: 25px;
+      margin-bottom: 25px; } }
 
 .basement_contacti {
   font-size: 12px;
@@ -971,13 +996,21 @@ body {
 
 .bg_info_box {
   padding: 25px 0px 25px;
-  background-color: #d4d4d4; }
+  background-color: #f7f7f7; }
 
 .info_box_text {
+  border-left-width: 1px;
+  border-left-style: dashed;
+  border-left-color: #4b5c724f;
   font-size: 13px;
   color: #4b5c72;
   margin-bottom: 0px;
   text-align: center; }
+  @media screen and (max-width: 1199px) {
+    .info_box_text {
+      border-right-width: 0px;
+      border-left-width: 0px;
+      margin-top: 15px; } }
 
 .naks_link {
   font-size: 13px;
@@ -1259,7 +1292,8 @@ body {
 .headline_name_box {
   font-size: 30px;
   line-height: 35px;
-  color: #555555; }
+  color: #000;
+  font-weight: 450; }
 
 .head_box_content_small_text {
   font-size: 18px;
@@ -1272,7 +1306,7 @@ body {
   color: #000000; }
 
 .important_text {
-  font-weight: 450;
+  font-weight: 550;
   color: #2f3741; }
 
 .center_podrobnee {
@@ -1294,26 +1328,18 @@ body {
   .headline_box_content {
     padding: 45px 0px 0px; } }
 
-.list_link li::before {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  left: 0;
-  margin-top: 10px;
-  background: url(/static/img/arrow_punkt.png) center 0 no-repeat; }
-
 .list_link {
   list-style: none;
   padding: 0px; }
 
 .list_link li {
   margin-bottom: 15px;
-  padding: 0px 25px; }
+  border: 0.5px solid #eee;
+  padding: 15px; }
 
 .service_link a {
   color: #33465f;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none; }
   .service_link a:hover {
     color: #6184b1;
@@ -1431,6 +1457,9 @@ body {
   @media screen and (max-width: 992px) {
     .number_personal_center {
       font-size: 12px; } }
+
+.img_center_content_right_column {
+  margin-top: 25px; }
 
 .img-item {
   margin-left: 25px;

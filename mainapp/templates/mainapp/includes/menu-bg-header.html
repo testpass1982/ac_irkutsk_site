@@ -31,7 +31,7 @@
 
                 <!-- Dropdown -->
                 <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'center_info' %}#page_top">Центр аттестации
+                  <a class="nav-link" href="{% link_holder 'CENTER_INFO' %}">{% title_holder 'CENTER_INFO' %}
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>
@@ -41,12 +41,13 @@
                     Услуги
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% link_holder 'ATCSM' %}">{% title_holder 'ATCSM' %}</a>
-                    <a class="dropdown-item" href="{% link_holder 'ATCSP' %}">{% title_holder 'ATCSP' %} </a>
-                    <a class="dropdown-item" href="{% link_holder 'ATCSO' %}">{% title_holder 'ATCSO' %}</a>
-                    <a class="dropdown-item" href="{% link_holder 'ATCST' %}">{% title_holder 'ATCST' %}</a>
-                    <a class="dropdown-item" href="{% link_holder 'ATTSM ' %}">{% title_holder 'ATTSM ' %}</a>
+                    <a class="dropdown-item" href="{% link_holder 'ATTSO' %}">{% title_holder 'ATTSO' %}</a>
+                    <a class="dropdown-item" href="{% link_holder 'ATTST' %}">{% title_holder 'ATTST' %} </a>
+                    <a class="dropdown-item" href="{% link_holder 'CSP' %}">{% title_holder 'CSP' %}</a>
+                    <a class="dropdown-item" href="{% link_holder 'DOBR_CERT' %}">{% title_holder 'DOBR_CERT' %}</a>
+                    <a class="dropdown-item" href="{% link_holder 'LNK' %}">{% title_holder 'LNK' %}</a>
                     <a class="dropdown-item" href="{% link_holder 'MVC' %}">{% title_holder 'MVC' %}</a>
+                    <a class="dropdown-item" href="{% link_holder 'BURO_INFO' %}">{% title_holder 'BURO_INFO' %}</a>
 
                   </div>
                 </li>

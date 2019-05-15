@@ -1,7 +1,8 @@
 .headline_name_box {
   font-size: 30px;
   line-height: 35px;
-  color: #555555;
+  color: #000;
+  font-weight: 450;
 }
 
 .head_box_content_small_text {
@@ -17,7 +18,7 @@
 }
 
 .important_text{
-  font-weight: 450;
+  font-weight: 550;
   color: #2f3741;
 }
 
@@ -50,31 +51,40 @@
   }
 }
 
-.list_link li::before {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  left: 0;
-  margin-top: 10px;
-  // margin-left: 30px;
-  background: url(/static/img/arrow_punkt.png) center 0 no-repeat;
-}
+// .list_link li::before {
+//   content: '';
+//   position: absolute;
+//   width: 50px;
+//   height: 50px;
+//   left: 0;
+//   margin-top: 10px;
+//   // margin-left: 30px;
+//   background: url(/static/img/arrow_punkt.png) center 0 no-repeat;
+// }
 
 .list_link {
   list-style: none;
   padding: 0px;
 }
 
+// .border_li_style{
+//   border-bottom: 1px solid rgb(255, 196, 0);
+//   margin-top: 10px;
+//   width: 45px;
+// }
+
 .list_link li {
   margin-bottom: 15px;
-  padding: 0px 25px;
+  border: 0.5px solid #eee;
+  padding: 15px;
+
 }
 
 .service_link a {
   color: #33465f;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
+  
 
   &:hover {
     color: #6184b1;
@@ -222,4 +232,8 @@
   @media screen and (max-width: 992px) {
     font-size: 12px;
    } 
+}
+
+.img_center_content_right_column{
+  margin-top: 25px;
 }

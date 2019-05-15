@@ -101,15 +101,23 @@ body {
 
 .bg_info_box{
   padding: 25px 0px 25px;
-background-color: #d4d4d4;
+background-color: #f7f7f7;
 
 }
 
 .info_box_text{
+  border-left-width: 1px;
+  border-left-style: dashed;
+  border-left-color: #4b5c724f;
   font-size: 13px;
  color: #4b5c72;
   margin-bottom: 0px; 
   text-align: center;
+  @media screen and (max-width: 1199px) {
+    border-right-width: 0px; 
+    border-left-width: 0px; 
+    margin-top: 15px;   
+  }
 }
 
 

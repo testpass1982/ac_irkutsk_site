@@ -1,3 +1,4 @@
+{% load link_holders %}
 {% load static %}
 <div class="box_footer_bg">
     <div class="container">
@@ -74,8 +75,18 @@
                         </a>
                     </div>
                 </div>
-             
-                <div class="col-sm-6 col-md-6 col-xl-2">            
+                <div class="col-xl-2"></div>
+
+                <div class="col-sm-6 col-md-6 col-xl-2">
+                    <div class="basement_number">
+                        <a href="tel:(3952) 236-009">(3952) 236-009</a>                        
+                    </div>
+                    <div class="basement_number_text">
+                        Центр аттестации
+                    </div>
+                                <div class="basement_mail">
+                                    <a href="mailto:gacvsr@mail.ru" title="Написать письмо">gacvsr@mail.ru</a>
+                                </div>
                     <div class="enter_system_edo">
                         <a href="https://ac.naks.ru/" class="enter_system_link" target="_blank">
                             Войти в систему ЭДО</a>
@@ -93,13 +104,15 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-xl-4 col-md-4">
                         <p class="basement_text_prava_kompany">
-                            © 2019 Кузбасский центр сварки и контроля &nbsp;| &nbsp; Все права защищены
+                            © ООО "Головной аттестационный центр
+                            Восточно-Сибирского региона" <br> Все права защищены
                         </p>
                     </div>
                     <div class="col-xl-3 col-md-4">
-                        <a href="{% url 'political' %}" class="political_konf" target="_blank">
-                            Политика конфиденциальности
-                        </a>
+                        <div class="political_konf" target="_blank">
+                            <a href="{% link_holder 'PRIVACY_POLICY' %} ">{% title_holder 'PRIVACY_POLICY' %}</a>
+                        </div>
+
                     </div>
 
                     <div class="col-xl-5">

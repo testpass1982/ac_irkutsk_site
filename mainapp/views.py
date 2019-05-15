@@ -133,9 +133,6 @@ def doc(request):
 
 def partners(request):
     return render(request, 'mainapp/partners.html')
-def center_info(request):
-    return render(request, 'mainapp/center_info.html')
-
 
 
 def page_details(request, pk=None):
