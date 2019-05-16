@@ -1,8 +1,8 @@
 .box_header {
     padding: 25px 0px;
 
-    @media screen and (max-width: 400px) {
-        padding: 5px 0px;
+    @media screen and (max-width: 320px) {
+        padding: 25px 0px 25px;
     }
 }
 
@@ -13,11 +13,17 @@
     }
 }
 
-.logo_box_free {
-    @media screen and (max-width: 942px) {
-        display: none;
+.logo_box_free{
+    @media screen and (max-width: 575px) {       
+        text-align: center;
     }
 }
+
+// .logo_box_free {
+//     @media screen and (max-width: 480px) {
+//         display: none;
+//     }
+// }
 
 .logo_otstup {
     margin-left: 15px;

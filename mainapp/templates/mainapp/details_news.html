@@ -50,8 +50,6 @@
                     <div class="box__news__inside">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
-
-
                                 <div style="max-height: 600px;">
                                     {% for img in images %}
                                     <div class="carousel-item{% if forloop.first %} active{% endif %}">
@@ -59,9 +57,6 @@
                                     </div>
                                     {% endfor %}
                                 </div>
-
-
-
                                 {% comment %} <div class="carousel-item">
                                     <img class="d-block w-100" src="{% static 'img/img__1.JPG' %}" alt="Second slide">
                                 </div>
@@ -90,27 +85,21 @@
                         {% for doc in documents %}
                         <button class="soglashenie__button mb-1">
                             <a href="{{ doc.document.url }}" class="soglashenie__button__text"
-                                title="{{ doc.document.name }}" download="#">{{ doc.title|truncatechars:15 }}
+                                title="{{ doc.document.name }}" download="#">{{ doc.title|truncatechars:15}}
                                 <img src="{% static '/img/download__icon.png' %}" alt="" class="download__icon"></a>
                         </button>
                         {% endfor %}
                     </div>
                 </div>
-
-
-            </div>
-
-                
-                 
-                 
+            </div>                 
+            <div class="col-sm-6 col-xl-3">
+                <p class="header__all__news">
+                        Другие новости
+                    </p>
+                    <a href="{% url 'all_news' %}#head__page" class="news__more__link">
+                        Ко всем новостям
+                    </a>
                         {% for post in related_posts %}
-                        <div class="col-sm-6 col-xl-3">
-                                <p class="header__all__news">
-                                        Другие новости
-                                    </p>
-                                    <a href="{% url 'all_news' %}#head__page" class="news__more__link">
-                                        Ко всем новостям
-                                    </a>
                             <div class="link__read__news__inside">
                                 <div class="block__news">
                                     <a href="{% url 'index' %}#head__page" class="link__news"></a>
@@ -125,10 +114,8 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
-                        {% endfor %}
-               
-
+                            {% endfor %}         
+            </div>
 
           
 

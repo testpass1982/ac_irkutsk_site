@@ -11,13 +11,19 @@ body {
 
 @media (min-width: 360px) {
     .container {
-        max-width: 1570px;
+        max-width: 1440px;
     }
 }
 
 .no-padding{
   padding: 0px;
   margin: 0px;
+}
+
+.delete_col{
+  @media screen and (max-width: 1200px) {
+  display: none;
+}
 }
 
 .container-fluid{
@@ -33,8 +39,7 @@ body {
     text-transform: uppercase;
     font-weight: 450;
     color: #000;
-    margin-top: 15px;
-  
+    margin-top: 15px;  
     @media screen and (max-width: 1199px) {
         margin-top: 15px;
     }
@@ -94,6 +99,13 @@ body {
 
 .box_content_include{
   padding: 45px 0px 45px;
+}
+
+.box_content_service_and_center{
+  padding: 45px 0px 15px;
+  @media screen and (max-width: 992px) {
+    padding: 45px 0px 0px; 
+  }
 }
 
 
@@ -285,24 +297,21 @@ text-decoration: underline;
 
 // page cok
 
-.box_right_column li {
-  margin-left: 20px;
-}
 
-.box_right_column a::before {
-  content: '';
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  margin-left: -15px;
-  margin-top: 7px;
-  background: url(/static/img/arrow_punkt.png) center 0 no-repeat;
-}
+// .box_right_column a::before {
+//   content: '';
+//   position: absolute;
+//   width: 45px;
+//   height: 45px;
+//   margin-left: -15px;
+//   margin-top: 7px;
+//   background: url(/static/img/arrow_punkt.png) center 0 no-repeat;
+// }
 
 
-.box_content_in_pages{
-  padding: 45px 0px 45px;
-}
+  .box_content_in_pages{
+    padding: 45px 0px 45px;
+  }
 
 .headline_cok_text{
   font-size: 24px;
@@ -374,7 +383,8 @@ text-decoration: underline;
 }
 
 .soglashenie__button__text {
-  border: 1px #8d8d8d solid;
+background-color: rgb(243, 243, 243);
+  border-radius: 3px;
   padding: 10px 15px;
   display: block;
   font-size: 14px;

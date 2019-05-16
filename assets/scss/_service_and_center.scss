@@ -27,6 +27,7 @@
   border: none;
   padding: 0px;
   margin-top: 10px;
+  margin-bottom: 35px;
 
   a {
     border: 1px solid #eee;
@@ -75,7 +76,7 @@
 
 .list_link li {
   margin-bottom: 15px;
-  border: 0.5px solid #eee;
+  border: 0.5px solid rgba(238, 238, 238, 0.507);
   padding: 15px;
 
 }
@@ -236,4 +237,24 @@
 
 .img_center_content_right_column{
   margin-top: 25px;
+}
+
+.img_center{
+  width: 240px;
+  height: 160px;
+  margin-bottom: 10px;
+  @media screen and (max-width: 320px) {
+      width: 100%;
+      height: 100%;
+   }
+  &:hover{
+      
+      transition: 0.2s;
+      -moz-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      -webkit-transition: all 0.2s ease-out;
+      -webkit-transform: scale(1.01);
+      -moz-transform: scale(1.01);
+      -o-transform: scale(1.01);
+  }
 }
