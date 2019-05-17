@@ -30,12 +30,12 @@
         <div class="col-xl-7">
         <div class="headline_doc_section">Документы ССР-3ГАЦ (аттестация персонала)</div>
           {% for doc in ssr_3gac_documents %}
-          <div class="col-sm-6 col-12">
+          <div class="col-sm-7 col-12">
             <a href="{{ doc.document }}" download="">
               <div class="box_doc_file" title="Скачать">
                 <div class="{% if doc.extension == '.docx' %}icon_word{% else %}icon_pdf{% endif %}"></div>
                 <p class="doc_text_name">
-                  {{ doc.title|truncatechars:35 }}
+                  {{ doc.title|truncatechars:45 }}
                   {{ doc.extension }}
                 </p>
               </div>
