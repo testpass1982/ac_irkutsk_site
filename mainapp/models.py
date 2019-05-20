@@ -380,3 +380,28 @@ class Attestat(models.Model):
 
     def __str__(self):
         return self.title
+
+class Chunk(models.Model):
+    """class for making html chunks on pages"""
+    title = models.CharField(u'Название вставки', max_length=64)
+    code = models.CharField(u'Уникальный код вставки', max_length=64, default='КОД_ВСТАВКИ')
+    html = RichTextUploadingField(u'Форматирование вставки')
+
+    class Meta:
+        verbose_name = 'Вставка'
+        verbose_name_plural = 'Вставки'
+
+    def __str__(self):
+        return self.title
+
+class DocumentCategory(models.Model):
+    name = models.CharField(u'Название категории', max_length=64)
+    number = models.SmallIntegerField(verbose_name='Порядок сортировки',
+                                    null=True, blank=True, default=None)
+
+    class Meta:
+        verbose_name = "Категория документа"
+        verbose_name_plural = "Категории документов"
+
+    def __str__(self):
+        return self.name
