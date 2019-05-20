@@ -1,18 +1,25 @@
-from .models import Menu, Post
+from .models import Document
+from .models import Profile, Service
+from .forms import ProfileImportForm
+import random
 
+def random_documents(request):
+    all_documents = Document.objects.all()
+    if len(all_documents) > 2:
+        all_document_pks = [doc.pk for doc in all_documents]
+        documents = [Document.objects.get(pk=random.choice(all_document_pks)) for i in range(0, 3)]
+        return {'random_documents': documents}
+    else:
+        return {'random_documents': ['Нет документов в базе данных']}
 
-# def menu_urls(request):
-#     print('...menu_urls context_processors works...')
-#     menu_urls = Menu.objects.all()
-#     print('urls in database:', len(menu_urls))
-#     # print(menu_urls)
-#     menu_dict = {}
-#     for url in menu_urls:
-#         menu_dict[url.url_code] = {'url': url.url, 'title': url.title}
-#     print(menu_dict)
-#     return {'page_urls': menu_dict,}
+def profile_chunks(request):
+    profile = Profile.objects.first()
+    return {'profile': profile}
 
-def footer_news(request):
-    print('...footer_news...working')
-    posts = Post.objects.filter(publish_in_basement=True).order_by('-published_date')[:3]
-    return {'basement_news': posts }
+def services(request):
+    all_services = Service.objects.all().order_by('number')
+    return {'all_services': all_services}
+
+def profile_import(request):
+    profile_import_form = ProfileImportForm()
+    return {'profile_import_form': profile_import_form}

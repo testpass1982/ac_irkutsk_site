@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-xl-6">
                 <p class="headline_contacti">
-                    ООО "Головной аттестационный центр Восточно-Сибирского региона"
+                    {{ profile.org_short_name }}
                 </p>
                 <div class="headline_text_contacts">
                     Центр аккредитован для всех видов аттестации сварочного оборудования, сварочных материалов и
@@ -40,15 +40,14 @@
                     Телефон для связи
                 </div>
                 <div class="phone_contacti">
-                    8 (3952) 236-009
+                    {{ profile.org_main.phone }}
                 </div>
                 <div class="headline_text_contacts">
                     Адрес
                 </div>
                 <div class="contacti_adres">
-                    664075, город Иркутск,
-                    улица Байкальская, дом 202/12
-                </div>               
+                    {{ profile.org_address }}
+                </div>
             </div>
             <div class="col-xl-6">
                 <div class="ya__map">
