@@ -4,7 +4,7 @@ from django.utils.encoding import force_text
 from django.utils.html import format_html
 
 from .models import Post, Category, Tag, Document, PostPhoto, Article, Message, Contact
-from .models import Staff, Registry, Menu, SidePanel
+from .models import Staff, Registry, Menu, SidePanel, Service, Profile, Attestat, CenterPhotos
 
 # from .models import WeldData
 # from .domain_model import WeldOrg, Welder
@@ -114,7 +114,7 @@ class PostAdmin(admin.ModelAdmin):
 
     def view_on_site(self, obj):
         url = reverse('detailview', kwargs={'content': 'post', 'pk': obj.pk})
-        return 'http://127.0.0.1:8000' + url
+        return  url
 
 
 @admin.register(PostPhoto)
@@ -129,13 +129,21 @@ class PostPhotoAdmin(admin.ModelAdmin):
 class MessageAdmin(admin.ModelAdmin):
     list_display = ['title', 'typeof', 'params', 'sender_email', 'status']
 
+@admin.register(CenterPhotos)
+class CenterPhotoAdmin(admin.ModelAdmin):
+    list_display = ['title', 'number']
+
 
 admin.site.register(Tag)
 admin.site.register(Category)
 admin.site.register(Contact)
 admin.site.register(Staff)
 admin.site.register(Registry)
-admin.site.register(Menu)
+# admin.site.register(Menu)
 admin.site.register(SidePanel)
+admin.site.register(Attestat)
+admin.site.register(Service)
+admin.site.register(Profile)
+# admin.site.register(CenterPhotos)
 # admin.site.register(WeldOrg)
 # admin.site.register(Welder)

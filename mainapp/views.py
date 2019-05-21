@@ -6,20 +6,20 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post, PostPhoto, Tag, Category, Document, Article, Message, Contact
-from .models import Registry, Menu
+from .models import Registry, Menu, Profile, Service
 from .models import Staff
-from .forms import PostForm, ArticleForm, DocumentForm
+from .forms import PostForm, ArticleForm, DocumentForm, ProfileImportForm
 from .forms import SendMessageForm, SubscribeForm, AskQuestionForm, SearchRegistryForm
 from .adapters import MessageModelAdapter
 from .message_tracker import MessageTracker
-from .utilites import UrlMaker
+from .utilites import UrlMaker, update_from_dict
 from .registry_import import Importer, data_url
 
 # Create your views here.
 
 def index(request):
     #TODO:  сделать когда-нибудь вывод форм на глваную
-    title = 'Головной аттестационный центр Восточно-Сибирского региона'
+    title = 'main page'
     """this is mainpage view with forms handler and adapter to messages"""
     # tracker = MessageTracker()
     if request.method == 'POST':
@@ -72,9 +72,13 @@ def index(request):
     # print(request.resolver_match)
     # print(request.resolver_match.url_name)
 
+    from .models import CenterPhotos
+
     content = {
         'title': title,
-        'publications': publications
+        'publications': publications,
+        'center_photos': CenterPhotos.objects.all().order_by('number')
+
         # 'docs': docs,
         # 'articles': main_page_articles,
         # 'send_message_form': SendMessageForm(),
@@ -95,28 +99,31 @@ def reestr(request):
 def doc(request):
     # documents= Document.objects.all()
 
-    gac_documents = Document.objects.filter(
-        tags__in=Tag.objects.filter(name='ССР3ГАЦ'))
-    csp_documents = Document.objects.filter(
-        tags__in=Tag.objects.filter(name='ССР3ЦСП'))
-    acsm_documents = Document.objects.filter(
-        tags__in=Tag.objects.filter(name='АЦСМ46'))
-    acso_documents = Document.objects.filter(
-        tags__in=Tag.objects.filter(name='АЦСО82'))
-    acst_documents = Document.objects.filter(
-        tags__in=Tag.objects.filter(name='АЦСТ90'))
-    cok_documents = Document.objects.filter(
-        tags__in=Tag.objects.filter(name='COK12'))
+    # gac_documents = Document.objects.filter(
+    #     tags__in=Tag.objects.filter(name='ССР3ГАЦ'))
+    # csp_documents = Document.objects.filter(
+    #     tags__in=Tag.objects.filter(name='ССР3ЦСП'))
+    # acsm_documents = Document.objects.filter(
+    #     tags__in=Tag.objects.filter(name='АЦСМ46'))
+    # acso_documents = Document.objects.filter(
+    #     tags__in=Tag.objects.filter(name='АЦСО82'))
+    # acst_documents = Document.objects.filter(
+    #     tags__in=Tag.objects.filter(name='АЦСТ90'))
+    # cok_documents = Document.objects.filter(
+    #     tags__in=Tag.objects.filter(name='COK12'))
 
+    from .models import DocumentCategory
 
     content={
         "title": "doc",
-        "ssr_3gac_documents": gac_documents,
-        "ssr_3csp_documents": csp_documents,
-        "acsm_46_documents": acsm_documents,
-        "acso_82_documents": acso_documents,
-        "acst_90_documents": acst_documents,
-        "cok_12_documents": cok_documents,
+        'docs': Document.objects.all(),
+        'categories': DocumentCategory.objects.all()
+        # "ssr_3gac_documents": gac_documents,
+        # "ssr_3csp_documents": csp_documents,
+        # "acsm_46_documents": acsm_documents,
+        # "acso_82_documents": acso_documents,
+        # "acst_90_documents": acst_documents,
+        # "cok_12_documents": cok_documents,
 
     }
     return render(request, 'mainapp/doc.html', content)
@@ -137,9 +144,18 @@ def partners(request):
 
 def page_details(request, pk=None):
     post = get_object_or_404(Post, pk=pk)
+    service = get_object_or_404(Service, pk=pk)
     content = {
         'title': 'Детальный просмотр',
         'post': post,
+    }
+    return render(request, 'mainapp/page_details.html', content)
+
+def service_details(request, pk=None):
+    service = get_object_or_404(Service, pk=pk)
+    content = {
+        'title': 'Детальный просмотр',
+        'post': service,
     }
     return render(request, 'mainapp/page_details.html', content)
 
@@ -198,3 +214,37 @@ def details_news(request, pk=None):
     }
 
     return render(request, 'mainapp/details_news.html', post_content)
+
+def import_profile(request):
+    content = {}
+    if request.method == "POST":
+        if len(request.FILES) > 0:
+            form = ProfileImportForm(request.POST, request.FILES)
+            if form.is_valid():
+                data = request.FILES.get('file')
+                file = data.readlines()
+                import_data = {}
+                for line in file:
+                    string = line.decode('utf-8')
+                    if string.startswith('#') or string.startswith('\n'):
+                        print('Пропускаем: ', string)
+                        continue
+                    splitted = string.split("::")
+                    import_data.update({splitted[0].strip(): splitted[1].strip()})
+                    print('Импортируем:', string)
+                profile = Profile.objects.first()
+                if profile is None:
+                    profile = Profile.objects.create(org_short_name="DEMO")
+                try:
+                    #updating existing record with imported fields
+                    update_from_dict(profile, import_data)
+                    content.update({'profile_dict': '{}'.format(profile.__dict__)})
+                    content.update({'profile': profile})
+                    print('***imported***')
+                except Exception as e:
+                    print("***ERRORS***", e)
+                    content.update({'errors': e})
+        else:
+            content.update({'errors': 'Файл для загрузки не выбран'})
+        return render(request, 'mainapp/includes/profile_load.html', content)
+

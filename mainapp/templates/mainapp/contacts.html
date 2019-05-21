@@ -22,37 +22,27 @@
         <div class="row">
             <div class="col-xl-6">
                 <p class="headline_contacti">
-                    ООО "Головной аттестационный центр Восточно-Сибирского региона"
+                    {{ profile.org_short_name }}
                 </p>
                 <div class="headline_text_contacts">
-                    Центр аккредитован для всех видов аттестации сварочного оборудования, сварочных материалов и
-                    сварочных технологий.
-                    <p class="ac_reestr_naks">
-                        <a href="http://www.naks.ru/assp/reestrac/index.php?ID=5124686">Наш центр в реестрах НАКС</a>
-                    </p>
+                    Телефон: {{ profile.org_main_phone }}
+                </div>
+                <div class="headline_text_contacts">
+                    Email: {{ profile.org_email }}
                 </div>
                 <div class="dotted_border_bottom"></div>
 
                 <p class="headline_contacti">
                     Местоположение
                 </p>
-                <div class="headline_text_contacts">
-                    Телефон для связи
-                </div>
                 <div class="phone_contacti">
-                    8 (3952) 236-009
+                    {{ profile.org_address }}
                 </div>
-                <div class="headline_text_contacts">
-                    Адрес
-                </div>
-                <div class="contacti_adres">
-                    664075, город Иркутск,
-                    улица Байкальская, дом 202/12
-                </div>               
+
             </div>
             <div class="col-xl-6">
                 <div class="ya__map">
-                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Accde4cc6a4a92bab0730c29452755711a898e423f05e02bb3e2ad45fe1fa8bd7&amp;width=100%&amp;height=543&amp;lang=ru_RU&amp;scroll=true"></script>
+                    <script type="text/javascript" charset="utf-8" async src="{{profile.org_address_map_link}}"></script>
                 </div>
 
             </div>

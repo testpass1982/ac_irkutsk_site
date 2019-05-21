@@ -23,7 +23,7 @@
                     <div class="col-xl-8">
                         <div class="box_info_content">
                             <div class="headline_content_box_content">
-                                {{ post.title }}                             
+                                {{ post.title }}
                             </div>
                             <div>
                                     <button class="request_page_details">
@@ -34,6 +34,7 @@
                             <div class="line_center"></div>
             <div class="content_text_page_details">
                     {{ post.text|safe }}
+                    {{ post.html|safe }}
             </div>
                         </div>
                     </div>

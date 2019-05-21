@@ -8,43 +8,22 @@
             <div class="col-xl-4">
                 <div class="headline_box_content">
                     <p class="headline_name_box">
-                        Услуги центра
+                        Услуги
                     </p>
                     <p class="head_box_content_small_text">
-                        Основные направления центра
+                        Основные направления {{ profile.org_short_name }}
                     </p>
                 </div>
                 <div class="block_service">
                     <div class="service_link">
                         <ul class="list_link">
+
+                           {% for service in all_services %}
                             <li>
-                                <a href="{% link_holder 'ATTSO' %}">{% title_holder 'ATTSO' %}</a>
+                                <a href="{% url 'service_details' service.pk %}">{{ service.title }}</a>
                                 <div class="border_li_style"></div>
                             </li>
-                            <li>
-                                <a href="{% link_holder 'ATTST' %}">{% title_holder 'ATTST' %}</a>
-                                <div class="border_li_style"></div>
-                            </li>
-                            <li>
-                                <a href="{% link_holder 'CSP' %}">{% title_holder 'CSP' %}</a>
-                                <div class="border_li_style"></div>
-                            </li>
-                            <li>
-                                <a href="{% link_holder 'DOBR_CERT' %}">{% title_holder 'DOBR_CERT' %}</a>
-                                <div class="border_li_style"></div>
-                            </li>
-                            <li>
-                                <a href="{% link_holder 'LNK' %}">{% title_holder 'LNK' %}</a>
-                                <div class="border_li_style"></div>
-                            </li>
-                            <li>
-                                <a href="{% link_holder 'MVC' %}">{% title_holder 'MVC' %}</a>
-                                <div class="border_li_style"></div>
-                            </li>
-                            <li>
-                                <a href="{% link_holder 'BURO_INFO' %}">{% title_holder 'BURO_INFO' %}</a>
-                                <div class="border_li_style"></div>
-                            </li>
+                           {% endfor %}
 
                         </ul>
                     </div>
@@ -54,25 +33,13 @@
             <div class="col-xl-7">
                 <div class="headline_box_content">
                     <p class="headline_name_box">
-                        Центр аттестации
+                        Об организации
                     </p>
-                    <p class="head_box_content_small_text">
-                        ООО "Головной аттестационный центр Восточно-Сибирского региона"
-                    </p>
+                    <p class="head_box_content_small_text">{{ profile.org_short_name }}</p>
                 </div>
                 <div class="box_content_center">
                     <p class="content_center_text">
-                        Аккредитован в области аттестации сварочного производства САСв с января 2000 года. Центр
-                        осуществляет аттестацию персонала на выполнение сварочных работ (I уровень - сварщик),
-                        руководство и технический контроль за проведением сварочных работ, включая работы по технической
-                        подготовке производства и разработку производственно-технологической и нормативной документации
-                        (II –IV уровень - специалисты), преподавателей и экзаменаторов для всех групп опасных
-                        технических устройств. Центр аккредитован для всех видов аттестации сварочного оборудования,
-                        сварочных материалов и сварочных технологий.
-                    </p>
-                    <p class="content_center_text important_text">
-                        За время существования центра было проведено более 10 000 аттестаций персонала сварочного
-                        производства, около 1000 единиц сварочного оборудования и более 1200 сварочных технологий.
+                        {{ profile.org_history }}
                     </p>
                     <button class="center_podrobnee">
                         <a href="{% link_holder 'CENTER_INFO' %}"
@@ -80,34 +47,21 @@
 
                     </button>
                 </div>
-                <div class="box_img_center">                 
+                <div class="box_img_center">
                     <p class="imglist" style="max-width: 1000px;">
-                      <a href="{% static 'img/img_center_1.JPG' %}" data-fancybox="images"
-                        data-caption="Backpackers following a dirt trail">
-                        <img src="{% static 'img/img_center_1.JPG' %}" class="img-fluid img_center mr-2" />
+
+                    {% for photo in center_photos %}
+
+                      <a href="{{ photo.image.url }}" data-fancybox="images"
+                        data-caption="{{ photo.title }}">
+                        <img src="{{ photo.image.url }}" class="img-fluid img_center mr-2" />
                       </a>
-                      <a href="{% static 'img/img_center_2.JPG' %}" data-fancybox="images"
-                        data-caption="Backpackers following a dirt trail">
-                        <img src="{% static 'img/img_center_2.JPG' %}" class="img-fluid img_center mr-2" />
-                      </a>
-                      <a href="{% static 'img/img_center_3.JPG' %}" data-fancybox="images"
-                        data-caption="Backpackers following a dirt trail">
-                        <img src="{% static 'img/img_center_3.JPG' %}" class="img-fluid img_center mr-2" />
-                      </a>
-                      <a href="{% static 'img/img_center_4.JPG' %}" data-fancybox="images"
-                        data-caption="Backpackers following a dirt trail">
-                        <img src="{% static 'img/img_center_4.JPG' %}" class="img-fluid img_center mr-2" />
-                      </a>
-                      <a href="{% static 'img/img_center_5.JPG' %}" data-fancybox="images"
-                        data-caption="Backpackers following a dirt trail">
-                        <img src="{% static 'img/img_center_5.JPG' %}" class="img-fluid img_center mr-2" />
-                      </a>
-                      <a href="{% static 'img/img_center_6.JPG' %}" data-fancybox="images"
-                        data-caption="Backpackers following a dirt trail">
-                        <img src="{% static 'img/img_center_6.JPG' %}" class="img-fluid img_center mr-2" />
-                      </a>                              
+
+                    {% endfor %}
+
+
                     </p>
-        
+
                   </div>
             </div>
         </div>

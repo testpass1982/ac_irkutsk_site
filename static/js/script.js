@@ -262,5 +262,13 @@ $(document).ready(function() {
   //   });
   // });
 
-
+  $('#toggle_panel').click(function(event){
+    event.preventDefault();
+    $('.admin_panel').toggle();
+    if ($('.admin_panel').is(":visible")) {
+      $('#toggle_panel').html('<i class="fas fa-arrow-up"></i>');
+    } else {
+      $('#toggle_panel').html('<i class="fas fa-arrow-down"></i>');
+    }
+  });
 });

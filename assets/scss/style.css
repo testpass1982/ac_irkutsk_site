@@ -56,7 +56,7 @@
 
 .logo_box_sasp {
   text-align: right; }
-  @media screen and (max-width: 1399px) {
+  @media screen and (min-width: 1200px) {
     .logo_box_sasp {
       display: none; } }
 
@@ -2028,5 +2028,10 @@ body {
 .headline_side_panel p {
   font-size: 16px;
   font-weight: 350; }
+
+.top-right-absolute {
+  position: absolute;
+  top: 1px;
+  right: 5px; }
 
 /*# sourceMappingURL=style.css.map */

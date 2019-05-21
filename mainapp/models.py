@@ -124,6 +124,17 @@ class Article(ContentMixin):
     def __str__(self):
         return self.title
 
+class DocumentCategory(models.Model):
+    name = models.CharField(u'Название категории', max_length=64)
+    number = models.SmallIntegerField(verbose_name='Порядок сортировки',
+                                    null=True, blank=True, default=None)
+
+    class Meta:
+        verbose_name = "Категория документа"
+        verbose_name_plural = "Категории документов"
+
+    def __str__(self):
+        return self.name
 
 class Document(models.Model):
     """"
@@ -139,6 +150,7 @@ class Document(models.Model):
                                     message="Неправильный тип файла, используйте\
                                         PDF, DOCX, DOC, JPG, JPEG")])
 
+    category = models.ForeignKey(DocumentCategory, blank=True, null=True, on_delete=models.SET_NULL)
     url_code = models.CharField(u'Код ссылки', max_length=30, blank=True, default='НЕ УКАЗАН')
     uploaded_at = models.DateTimeField(
         verbose_name='Загружен', default=timezone.now)
@@ -310,3 +322,98 @@ class WeldData(models.Model):
 
     class Meta:
         abstract = True
+
+class Service(models.Model):
+    """class for service template"""
+    title = models.CharField(
+        u'Название услуги', max_length=64, help_text="""
+            При добавлении услуги в этот раздел автоматически
+            будет создан пункт меню в разделе "Услуги", в котором они
+            сортируются в соответствии с порядком сортировки
+        """)
+    html = RichTextUploadingField(u'Описание услуги')
+    number = models.SmallIntegerField(u'Порядок сортировки', blank=True, null=True, default=None)
+
+    class Meta:
+        verbose_name = 'Услуга'
+        verbose_name_plural = 'Услуги'
+
+    def __str__(self):
+        return self.title
+
+class Profile(models.Model):
+    """class for templating organization"""
+    org_logotype = models.ImageField(u'Логотип организации', upload_to='upload/', blank=True, null=True, default=None)
+    org_short_name = models.CharField(u'Краткое название организации', max_length=100, blank=True, null=True, default=None)
+    org_full_name = models.CharField(u'Полное название организации', max_length=300, blank=True, null=True, default=None)
+    org_intro = models.TextField(u'Текст для главной страницы', blank=True, null=True, default=None)
+    org_history = models.TextField(u'История организаици', blank=True, null=True, default=None)
+    # phone1 for header
+    org_main_phone = models.CharField(u'Главный телефон организации (используется в хедере)', max_length=30, blank=True, null=True, default=None)
+    org_main_phone_text = models.CharField(u'Подпись под телефоном в хедере, например "Многоканальный"', max_length=30, blank=True, null=True, default=None)
+    # phone2 for header
+    org_secondary_phone = models.CharField(u'Второй телефон организации (используется в хедере)', max_length=30, blank=True, null=True, default=None)
+    org_secondary_phone_text = models.CharField(u'Подпись под вторым телефоном в хедере, например "Бухгалтерия"', max_length=30, blank=True, null=True, default=None)
+    org_phones = models.TextField(u'Телефоны', blank=True, null=True, default=None)
+    org_email = models.TextField(u'Адрес электронной почты', blank=True, null=True, default=None)
+    org_header_emails = models.TextField(u'Адреса электронной почты (для хедера)', blank=True, null=True, default=None)
+    org_header_phones = models.TextField(u'Телефоны (для хедера)', blank=True, null=True, default=None)
+    org_address = models.TextField(u'Адрес местоположения организации', null=True, blank=True, default=None)
+    org_address_map_link = models.URLField(u'Ссылка на карту', blank=True, null=True, default=None)
+    org_csp_code = models.CharField(u'шифр ЦСП (необязательно)', max_length=20, null=True, blank=True)
+    org_csp_reestr_link = models.URLField(u'Ссылка на реестр ЦСП', blank=True, null=True)
+    org_acsp_code = models.CharField(u'шифр АЦСП (необязательно)', max_length=20, null=True, blank=True)
+    org_acsp_reestr_link = models.URLField(u'Ссылка на реестр АЦСП', blank=True, null=True)
+    org_acsm_code = models.CharField(u'шифр АЦСМ (необязательно)', max_length=20, null=True, blank=True)
+    org_acsm_reestr_link = models.URLField(u'Ссылка на реестр АЦСМ', blank=True, null=True)
+    org_acso_code = models.CharField(u'шифр АЦСО (необязательно)', max_length=20, null=True, blank=True)
+    org_acso_reestr_link = models.URLField(u'Ссылка на реестр АЦСО', blank=True, null=True)
+    org_acst_code = models.CharField(u'шифр АЦСТ (необязательно)', max_length=20, null=True, blank=True)
+    org_acst_reestr_link = models.URLField(u'Ссылка на реестр АЦСТ', blank=True, null=True)
+    org_cok_code = models.CharField(u'шифр ЦОК (необязательно)', max_length=20, null=True, blank=True)
+    org_cok_reestr_link = models.URLField(u'Ссылка на реестр ЦОК', blank=True, null=True)
+    number = models.SmallIntegerField(u'Порядок сортировки', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Профиль организации'
+        verbose_name_plural = 'Профили организации'
+
+    def __str__(self):
+        return self.org_short_name
+
+class Attestat(models.Model):
+    title = models.CharField(u'Название аттестата(сертификата)', max_length=60)
+    image = models.ImageField(u'Скан аттестата', upload_to="upload/")
+    number = models.SmallIntegerField(u'Порядок сортировки')
+
+    class Meta:
+        verbose_name = 'Аттестат соответствия'
+        verbose_name_plural = 'Аттестаты соответствия'
+
+    def __str__(self):
+        return self.title
+
+class Chunk(models.Model):
+    """class for making html chunks on pages"""
+    title = models.CharField(u'Название вставки', max_length=64)
+    code = models.CharField(u'Уникальный код вставки', max_length=64, default='КОД_ВСТАВКИ')
+    html = RichTextUploadingField(u'Форматирование вставки')
+
+    class Meta:
+        verbose_name = 'Вставка'
+        verbose_name_plural = 'Вставки'
+
+    def __str__(self):
+        return self.title
+
+class CenterPhotos(models.Model):
+    title = models.CharField(u'Название фотографии', max_length=60)
+    image = models.ImageField(u'Файл', upload_to="upload/")
+    number = models.SmallIntegerField(u'Порядок сортировки', blank=True)
+
+    class Meta:
+        verbose_name = 'Фотография центра'
+        verbose_name_plural = 'Фотографии центра'
+
+    def __str__(self):
+        return self.title

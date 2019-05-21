@@ -6,7 +6,7 @@
     }
 }
 
-.logo_box_head {   
+.logo_box_head {
     @media screen and (max-width: 576px) {
         padding: 15px 10px;
         text-align: center;
@@ -14,7 +14,7 @@
 }
 
 .logo_box_free{
-    @media screen and (max-width: 575px) {       
+    @media screen and (max-width: 575px) {
         text-align: center;
     }
 }
@@ -50,7 +50,7 @@
 
 
 .consultant_text {
-    font-size: 14px;    
+    font-size: 14px;
 }
 
 .feedback_button {
@@ -82,7 +82,7 @@
 .logo_box_sasp {
     text-align: right;
 
-    @media screen and (max-width: 1399px) {
+    @media screen and (min-width: 1200px) {
         display: none;
     }
 }
