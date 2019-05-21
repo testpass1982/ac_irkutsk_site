@@ -22,6 +22,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', mainapp.index, name='index'),
     path('details_news/<slug:pk>/', mainapp.details_news, name='details_news'),
     path('political/', mainapp.political, name='political'),
@@ -29,10 +30,11 @@ urlpatterns = [
     path('doc/', mainapp.doc, name='doc'),
     path('partners/', mainapp.partners, name='partners'),
     path('details/<slug:pk>/', mainapp.page_details, name='details'),
+    path('service_details/<slug:pk>/', mainapp.service_details, name='service_details'),
     path('cok/', mainapp.cok, name='cok'),
     path('profstandarti/', mainapp.profstandarti, name='profstandarti'),
     path('contacts/', mainapp.contacts, name='contacts'),
-
+    path('import_profile/', mainapp.import_profile, name='import_proflie'),
     path(
         'detailview/<slug:content>/<slug:pk>',
         mainapp.details_news,

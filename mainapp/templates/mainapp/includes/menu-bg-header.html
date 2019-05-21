@@ -41,13 +41,10 @@
                     Услуги
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% link_holder 'ATTSO' %}">{% title_holder 'ATTSO' %}</a>
-                    <a class="dropdown-item" href="{% link_holder 'ATTST' %}">{% title_holder 'ATTST' %} </a>
-                    <a class="dropdown-item" href="{% link_holder 'CSP' %}">{% title_holder 'CSP' %}</a>
-                    <a class="dropdown-item" href="{% link_holder 'DOBR_CERT' %}">{% title_holder 'DOBR_CERT' %}</a>
-                    <a class="dropdown-item" href="{% link_holder 'LNK' %}">{% title_holder 'LNK' %}</a>
-                    <a class="dropdown-item" href="{% link_holder 'MVC' %}">{% title_holder 'MVC' %}</a>
-                    <a class="dropdown-item" href="{% link_holder 'BURO_INFO' %}">{% title_holder 'BURO_INFO' %}</a>
+
+                    {% for service in all_services %}
+                      <a class="dropdown-item" href="{% url 'service_details' service.pk %}">{{ service.title }}</a>
+                    {% endfor %}
 
                   </div>
                 </li>

@@ -124,6 +124,17 @@ class Article(ContentMixin):
     def __str__(self):
         return self.title
 
+class DocumentCategory(models.Model):
+    name = models.CharField(u'Название категории', max_length=64)
+    number = models.SmallIntegerField(verbose_name='Порядок сортировки',
+                                    null=True, blank=True, default=None)
+
+    class Meta:
+        verbose_name = "Категория документа"
+        verbose_name_plural = "Категории документов"
+
+    def __str__(self):
+        return self.name
 
 class Document(models.Model):
     """"
@@ -139,6 +150,7 @@ class Document(models.Model):
                                     message="Неправильный тип файла, используйте\
                                         PDF, DOCX, DOC, JPG, JPEG")])
 
+    category = models.ForeignKey(DocumentCategory, blank=True, null=True, on_delete=models.SET_NULL)
     url_code = models.CharField(u'Код ссылки', max_length=30, blank=True, default='НЕ УКАЗАН')
     uploaded_at = models.DateTimeField(
         verbose_name='Загружен', default=timezone.now)
@@ -394,14 +406,14 @@ class Chunk(models.Model):
     def __str__(self):
         return self.title
 
-class DocumentCategory(models.Model):
-    name = models.CharField(u'Название категории', max_length=64)
-    number = models.SmallIntegerField(verbose_name='Порядок сортировки',
-                                    null=True, blank=True, default=None)
+class CenterPhotos(models.Model):
+    title = models.CharField(u'Название фотографии', max_length=60)
+    image = models.ImageField(u'Файл', upload_to="upload/")
+    number = models.SmallIntegerField(u'Порядок сортировки', blank=True)
 
     class Meta:
-        verbose_name = "Категория документа"
-        verbose_name_plural = "Категории документов"
+        verbose_name = 'Фотография центра'
+        verbose_name_plural = 'Фотографии центра'
 
     def __str__(self):
-        return self.name
+        return self.title

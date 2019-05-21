@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand
 from django.urls import reverse
 from django.core.files import File
 from mainapp.models import Menu, Post, Article, PostPhoto, Tag, Category, Chunk
-from mainapp.models import Contact, Document, Profile, DocumentCategory, Service
+from mainapp.models import Contact, Document, Profile, DocumentCategory, Service, CenterPhotos
 from mainapp.models import Attestat
 from django.conf import settings
 from mixer.backend.django import mixer
@@ -78,6 +78,15 @@ documents = [
     'media/document4.doc'
 ]
 
+center_photos = [
+    'media/center_1.jpg',
+    'media/center_2.jpg',
+    'media/center_3.jpg',
+    'media/center_4.jpg',
+    'media/center_5.jpg',
+    'media/center_6.jpg',
+]
+
 menu_urls = [
     'ABOUT_US', 'ASSP', 'ASSV', 'ATTSP', 'ATTST', 'COK', 'CONTACT', 'DOKZAYAV',
     'INFO', 'OBLD', 'OBLDATT', 'PROFST', 'REGISTRY', 'RKNK', 'SPECSVAR', 'VSENOVOSTI', 'ZAYAV', 'SOSTAV_KOMISS'
@@ -114,6 +123,16 @@ class Command(BaseCommand):
         Service.objects.all().delete()
         Attestat.objects.all().delete()
         Chunk.objects.all().delete()
+        CenterPhotos.objects.all().delete()
+
+
+        #upload_center_photos
+        for i in range(0, len(center_photos)):
+            mixer.blend(
+                CenterPhotos,
+                image = File(open(center_photos[i], 'rb')),
+                number = i+1
+            )
 
         #make Chunk for page "About"
         mixer.blend(
