@@ -58,25 +58,26 @@ def index(request):
 
     #Вывести ВСЕ объекты из БД
     # posts = Post.objects.all()[:3]
-    posts = Post.objects.filter(publish_on_main_page=True)[:7]
-    publications = []
-    for post in posts:
-        try:
-            publications.append({'post': post, 'photo': PostPhoto.objects.get(post=post).image.url })
-        except PostPhoto.DoesNotExist:
-            publications.append({'post': post, 'photo': 'https://place-hold.it/500x300'})
-    print('PUBLICACTIONS', publications)
+    # posts = Post.objects.filter(publish_on_main_page=True)[:7]
+    # publications = []
+    # for post in posts:
+    #     try:
+    #         publications.append({'post': post, 'photo': PostPhoto.objects.get(post=post).image.url })
+    #     except PostPhoto.DoesNotExist:
+    #         publications.append({'post': post, 'photo': 'https://place-hold.it/500x300'})
+    # print('PUBLICACTIONS', publications)
     # main_page_articles = Article.objects.filter(
     #     publish_on_main_page=True).order_by('-published_date')[:3]
 
     # print(request.resolver_match)
     # print(request.resolver_match.url_name)
+    # publications = Post.objects.all().order_by('-published_date')[:3]
 
     from .models import CenterPhotos
 
     content = {
         'title': title,
-        'publications': publications,
+        # 'publications': publications,
         'center_photos': CenterPhotos.objects.all().order_by('number')
 
         # 'docs': docs,
