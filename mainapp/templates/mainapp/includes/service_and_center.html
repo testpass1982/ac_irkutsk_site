@@ -10,7 +10,7 @@
                     <p class="headline_name_box">
                         Услуги
                     </p>
-                    <p class="head_box_content_small_text">
+                    <p class="head_box_content_small_text {% if user.is_authenticated %}editable{% endif %}">
                         Основные направления {{ profile.org_short_name }}
                     </p>
                 </div>
@@ -20,8 +20,8 @@
 
                            {% for service in all_services %}
                             <li>
-                                <a href="{% url 'service_details' service.pk %}">{{ service.title }}</a>
-                                <div class="border_li_style"></div>
+                                <a class="{% if user.is_authenticated %}editable{% endif %}" href="{% url 'service_details' service.pk %}">{{ service.title }}</a>
+                                <div class="border_li_style "></div>
                             </li>
                            {% endfor %}
 
@@ -35,15 +35,15 @@
                     <p class="headline_name_box">
                         Об организации
                     </p>
-                    <p class="head_box_content_small_text">{{ profile.org_short_name }}</p>
+                    <p class="head_box_content_small_text {% if user.is_authenticated %}editable{% endif %}">{{ profile.org_short_name }}</p>
                 </div>
                 <div class="box_content_center">
-                    <p class="content_center_text">
+                    <p class="content_center_text {% if user.is_authenticated %}editable{% endif %}">
                         {{ profile.org_history }}
                     </p>
                     <button class="center_podrobnee">
                         <a href="{% link_holder 'CENTER_INFO' %}"
-                            class="center_podrobnee_link">{% title_holder 'CENTER_INFO' %}</a>
+                            class="center_podrobnee_link {% if user.is_authenticated %}editable{% endif %}">{% title_holder 'CENTER_INFO' %}</a>
 
                     </button>
                 </div>
@@ -54,7 +54,7 @@
 
                       <a href="{{ photo.image.url }}" data-fancybox="images"
                         data-caption="{{ photo.title }}">
-                        <img src="{{ photo.image.url }}" class="img-fluid img_center mr-2" />
+                        <img src="{{ photo.image.url }}" class="img-fluid img_center mr-2 {% if user.is_authenticated %}editable{% endif %}" />
                       </a>
 
                     {% endfor %}

@@ -2034,4 +2034,7 @@ body {
   top: 1px;
   right: 5px; }
 
+.editable {
+  border: 1px dotted red; }
+
 /*# sourceMappingURL=style.css.map */

@@ -5,7 +5,7 @@
         <div class="footer_box_info_all">
             <div class="row">
                 <div class="col-xl-3">
-                    <div class="logo_footer">
+                    <div class="logo_footer {% if user.is_authenticated %}editable{% endif %}">
                         <img src="
                         {% if profile.org_logotype %}
                             {{ profile.org_logotype.url }}
@@ -14,7 +14,7 @@
                         {% endif %}
                         " alt="">
                     </div>
-                    <p class="footer_text_company">
+                    <p class="footer_text_company {% if user.is_authenticated %}editable{% endif %}">
                         {{ profile.org_full_name }}<br>
                         <strong>{{ profile.org_address }}</strong>
                     </p>
@@ -38,7 +38,7 @@
                         </p>
                     </div>
                     {% for post in basement_news %}
-                    <div class="box_footer_news">
+                    <div class="box_footer_news {% if user.is_authenticated %}editable{% endif %}">
                         <a href="{% url 'details_news' post.pk %}">
                             <p class="footer_news">
                                 {{ post.title }}
@@ -83,13 +83,13 @@
                 </div>
 
                 <div class="col-sm-6 col-md-6 offset-xl-1 col-xl-3">
-                    <div class="basement_number">
+                    <div class="basement_number {% if user.is_authenticated %}editable{% endif %}">
                         <a href="tel:{{profile.org_main_phone}}">{{ profile.org_main_phone }}</a>
                     </div>
                     <div class="basement_number_text">
                         Центр аттестации
                     </div>
-                                <div class="basement_mail">
+                                <div class="basement_mail {% if user.is_authenticated %}editable{% endif %}">
                                     <a href="mailto:{{profile.org_email}}" title="Написать письмо">{{profile.org_email}}</a>
                                 </div>
                     <div class="enter_system_edo">
