@@ -68,6 +68,7 @@ def reestr(request):
     }
     return render(request, 'mainapp/reestr.html', content)
 
+
 def doc(request):
     from .models import DocumentCategory
 
@@ -198,4 +199,3 @@ def import_profile(request):
         else:
             content.update({'errors': 'Файл для загрузки не выбран'})
         return render(request, 'mainapp/includes/profile_load.html', content)
-

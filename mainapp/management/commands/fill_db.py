@@ -1,4 +1,4 @@
-#core import file
+# core import file
 from django.core.management.base import BaseCommand
 from django.urls import reverse
 from django.core.files import File
@@ -14,7 +14,7 @@ import os, shutil
 
 # from model_mommy.recipe import Recipe, foreign_key, seq
 
-#clean upload folder
+# clean upload folder
 if os.path.isdir(os.path.join(settings.BASE_DIR, 'media', 'upload')):
     folder = os.path.join(settings.BASE_DIR, 'media', 'upload')
     for a_file in os.listdir(folder):
@@ -133,8 +133,8 @@ class Command(BaseCommand):
         for i in range(0, len(center_photos)):
             mixer.blend(
                 CenterPhotos,
-                image = File(open(center_photos[i], 'rb')),
-                number = i+1
+                image=File(open(center_photos[i], 'rb')),
+                number=i+1
             )
 
         #make Chunk for page "About"
@@ -211,7 +211,6 @@ class Command(BaseCommand):
                         ))
             )
             print('Заружен демо-документ {}'.format(i+1))
-
 
         print('Создаем демо-профиль...')
         mixer.blend(
