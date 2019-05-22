@@ -19,7 +19,7 @@ from .registry_import import Importer, data_url
 
 def index(request):
     #TODO:  сделать когда-нибудь вывод форм на глваную
-    title = 'main page'
+    title = 'Главная страница'
     """this is mainpage view with forms handler and adapter to messages"""
     # tracker = MessageTracker()
     if request.method == 'POST':
@@ -45,38 +45,12 @@ def index(request):
         else:
             raise ValidationError('form not valid')
 
-    # docs = Document.objects.filter(
-    #     publish_on_main_page=True).order_by('-created_date')[:3]
 
-    # main_page_news = Post.objects.filter(
-    #     publish_on_main_page=True).order_by('-published_date')[:7]
-
-    #Посты с картинками
-    # posts = {}
-    # for post in main_page_news:
-    #     posts[post] = PostPhoto.objects.filter(post__pk=post.pk).first()
-
-    #Вывести ВСЕ объекты из БД
-    # posts = Post.objects.all()[:3]
-    posts = Post.objects.filter(publish_on_main_page=True)[:7]
-    publications = []
-    for post in posts:
-        try:
-            publications.append({'post': post, 'photo': PostPhoto.objects.get(post=post).image.url })
-        except PostPhoto.DoesNotExist:
-            publications.append({'post': post, 'photo': 'https://place-hold.it/500x300'})
-    print('PUBLICACTIONS', publications)
-    # main_page_articles = Article.objects.filter(
-    #     publish_on_main_page=True).order_by('-published_date')[:3]
-
-    # print(request.resolver_match)
-    # print(request.resolver_match.url_name)
 
     from .models import CenterPhotos
 
     content = {
         'title': title,
-        'publications': publications,
         'center_photos': CenterPhotos.objects.all().order_by('number')
 
         # 'docs': docs,
@@ -144,7 +118,7 @@ def partners(request):
 
 def page_details(request, pk=None):
     post = get_object_or_404(Post, pk=pk)
-    service = get_object_or_404(Service, pk=pk)
+    # service = get_object_or_404(Service, pk=pk)
     content = {
         'title': 'Детальный просмотр',
         'post': post,
