@@ -1,6 +1,24 @@
-from fabric.api import local
+from fabric.api import * 
 from fabric.colors import green
+
+# env.use_ssh_config = False
+# env.disable_known_hosts = True
+# from fabric import Connection
 # https://micropyramid.com/blog/automate-django-deployments-with-fabfile/
+import json
+
+
+try:
+    with open("secret.json") as secret_file:
+        secret = json.load(secret_file)
+        env.update(secret)
+except FileNotFoundError:
+    print('***ERROR: no secret file***')
+
+def test():
+    # get_secret()
+    run('ls -la')
+    run('uname -a')
 
 def backup():
     print(green('pulling remote repo...'))
@@ -13,6 +31,10 @@ def backup():
     local('git commit -m "{}"'.format(comment))
     print(green('pushing master...'))
     local('git push -u origin master')
+
+def migrate():
+    local('python manage.py makemigrations')
+    local('python manage.py migrate')
 
 def deploy():
     local("python manage.py test")
@@ -27,7 +49,3 @@ def deploy():
     #switch_debug("True", "False")
     local('python manage.py collectstatic --noinput')
     #switch_debug("False", "True")
-
-def migrate():
-    local('python manage.py makemigrations')
-    local('python manage.py migrate')
