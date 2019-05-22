@@ -45,46 +45,10 @@ def index(request):
         else:
             raise ValidationError('form not valid')
 
-<<<<<<< HEAD
-
-=======
-    # docs = Document.objects.filter(
-    #     publish_on_main_page=True).order_by('-created_date')[:3]
-
-    # main_page_news = Post.objects.filter(
-    #     publish_on_main_page=True).order_by('-published_date')[:7]
-
-    #Посты с картинками
-    # posts = {}
-    # for post in main_page_news:
-    #     posts[post] = PostPhoto.objects.filter(post__pk=post.pk).first()
-
-    #Вывести ВСЕ объекты из БД
-    # posts = Post.objects.all()[:3]
-    # posts = Post.objects.filter(publish_on_main_page=True)[:7]
-    # publications = []
-    # for post in posts:
-    #     try:
-    #         publications.append({'post': post, 'photo': PostPhoto.objects.get(post=post).image.url })
-    #     except PostPhoto.DoesNotExist:
-    #         publications.append({'post': post, 'photo': 'https://place-hold.it/500x300'})
-    # print('PUBLICACTIONS', publications)
-    # main_page_articles = Article.objects.filter(
-    #     publish_on_main_page=True).order_by('-published_date')[:3]
-
-    # print(request.resolver_match)
-    # print(request.resolver_match.url_name)
-    # publications = Post.objects.all().order_by('-published_date')[:3]
->>>>>>> c0e8df024cddb70adcbddbae868e7ffc947a5b3b
-
     from .models import CenterPhotos
 
     content = {
         'title': title,
-<<<<<<< HEAD
-=======
-        # 'publications': publications,
->>>>>>> c0e8df024cddb70adcbddbae868e7ffc947a5b3b
         'center_photos': CenterPhotos.objects.all().order_by('number')
 
         # 'docs': docs,
