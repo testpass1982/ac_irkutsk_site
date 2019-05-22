@@ -26,13 +26,18 @@ class SiteTest(TestCase):
         self.assertTrue(html.strip().endswith('</html>'))
         self.assertTemplateUsed(response, 'mainapp/index.html')
 
-    def test_can_create_and_publish_news(self):
+    def test_can_create_and_publish_posts(self):
         for i in range(3):
             mixer.blend(Post, publish_on_main_page=True)
         response = self.client.get(reverse('index'))
         self.assertTrue(len(response.context['basement_news']), 3)
+        post_details_response = self.client.get(
+            reverse('details_news', kwargs={'pk': Post.objects.first().pk})
+            )
+        self.assertTemplateUsed(post_details_response, 'mainapp/details_news.html')
+        self.assertTrue(post_details_response.status_code, 200)
 
-    def test_can_open_news_by_details_url(self):
+    def test_can_open_posts_by_details_url(self):
         posts = mixer.cycle(3).blend(Post, publish_on_main_page=True)
         for post in posts:
             url = reverse('details_news', kwargs={'pk': post.pk})
