@@ -1,13 +1,14 @@
 from fabric.api import local
+from fabric.colors import green
 
 def backup():
-    print('pulling remote repo...')
+    print(green('pulling remote repo...'))
     local('git pull')
-    print('adding all changes to repo...')
+    print(green('adding all changes to repo...'))
     local('git add .')
 
-    print("enter your comment:")
+    print(green("enter your comment:"))
     comment = input()
     local('git commit -m "{}"'.format(comment))
-    print('pushing master...')
+    print(green('pushing master...'))
     local('git push -u origin master')
