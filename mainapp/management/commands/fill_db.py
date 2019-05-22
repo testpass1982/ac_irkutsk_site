@@ -15,37 +15,40 @@ import os, shutil
 # from model_mommy.recipe import Recipe, foreign_key, seq
 
 #clean upload folder
-folder = os.path.join(settings.BASE_DIR, 'media', 'upload')
-for a_file in os.listdir(folder):
-    a_file_path = os.path.join(folder, a_file)
-    try:
-        if os.path.isfile(a_file_path):
-            os.unlink(a_file_path)
-    except Exception as e:
-        print('ERROR', e)
+if os.path.isdir(os.path.join(settings.BASE_DIR, 'media', 'upload')):
+    folder = os.path.join(settings.BASE_DIR, 'media', 'upload')
+    for a_file in os.listdir(folder):
+        a_file_path = os.path.join(folder, a_file)
+        try:
+            if os.path.isfile(a_file_path):
+                os.unlink(a_file_path)
+        except Exception as e:
+            print('ERROR', e)
 # import pdb; pdb.set_trace()
 
 #clean upload/media folder
-media_folder = os.path.join(settings.BASE_DIR, 'media', 'upload', 'media')
-for a_file in os.listdir(media_folder):
-    # print(a_file)
-    a_file_path = os.path.join(media_folder, a_file)
-    try:
-        if os.path.isfile(a_file_path):
-            os.unlink(a_file_path)
-    except Exception as e:
-        print('ERROR', e)
+if os.path.isdir(os.path.join(settings.BASE_DIR, 'media', 'upload', 'media')):
+    media_folder = os.path.join(settings.BASE_DIR, 'media', 'upload', 'media')
+    for a_file in os.listdir(media_folder):
+        # print(a_file)
+        a_file_path = os.path.join(media_folder, a_file)
+        try:
+            if os.path.isfile(a_file_path):
+                os.unlink(a_file_path)
+        except Exception as e:
+            print('ERROR', e)
 
 #clean media/documents/ folder
-documents_folder = os.path.join(settings.BASE_DIR, 'media', 'documents', 'media')
-for a_file in os.listdir(documents_folder):
-    # print(a_file)
-    a_file_path = os.path.join(documents_folder, a_file)
-    try:
-        if os.path.isfile(a_file_path):
-            os.unlink(a_file_path)
-    except Exception as e:
-        print('ERROR', e)
+if os.path.isdir(os.path.join(settings.BASE_DIR, 'media', 'documents', 'media')):
+    documents_folder = os.path.join(settings.BASE_DIR, 'media', 'documents', 'media')
+    for a_file in os.listdir(documents_folder):
+        # print(a_file)
+        a_file_path = os.path.join(documents_folder, a_file)
+        try:
+            if os.path.isfile(a_file_path):
+                os.unlink(a_file_path)
+        except Exception as e:
+            print('ERROR', e)
 
 images = [
     'media/01.JPG',
