@@ -256,6 +256,7 @@ class Command(BaseCommand):
         )
         print('Демо-профиль {} создан'.format(Profile.objects.first().org_short_name))
 
+
         # Category.objects.create(name=settings.ACSP_CODE)
         # Category.objects.create(name=settings.CSP_CODE)
         # Category.objects.create(name=settings.ACSO_CODE)

@@ -71,57 +71,26 @@ def reestr(request):
     return render(request, 'mainapp/reestr.html', content)
 
 def doc(request):
-    # documents= Document.objects.all()
-
-    # gac_documents = Document.objects.filter(
-    #     tags__in=Tag.objects.filter(name='ССР3ГАЦ'))
-    # csp_documents = Document.objects.filter(
-    #     tags__in=Tag.objects.filter(name='ССР3ЦСП'))
-    # acsm_documents = Document.objects.filter(
-    #     tags__in=Tag.objects.filter(name='АЦСМ46'))
-    # acso_documents = Document.objects.filter(
-    #     tags__in=Tag.objects.filter(name='АЦСО82'))
-    # acst_documents = Document.objects.filter(
-    #     tags__in=Tag.objects.filter(name='АЦСТ90'))
-    # cok_documents = Document.objects.filter(
-    #     tags__in=Tag.objects.filter(name='COK12'))
-
     from .models import DocumentCategory
 
     content={
-        "title": "doc",
+        "title": "Документы",
         'docs': Document.objects.all(),
         'categories': DocumentCategory.objects.all()
-        # "ssr_3gac_documents": gac_documents,
-        # "ssr_3csp_documents": csp_documents,
-        # "acsm_46_documents": acsm_documents,
-        # "acso_82_documents": acso_documents,
-        # "acst_90_documents": acst_documents,
-        # "cok_12_documents": cok_documents,
-
     }
     return render(request, 'mainapp/doc.html', content)
-
-
-# def details_news(request, pk=None):
-#     post = Post.objects.get(pk=pk)
-#     content= {
-#         'title': 'Детальный просмотр',
-#         'post': post
-#     }
-#     return render(request, 'mainapp/details_news.html', content)
-
 
 def partners(request):
     return render(request, 'mainapp/partners.html')
 
-
 def page_details(request, pk=None):
     post = get_object_or_404(Post, pk=pk)
+    side_panel = post.side_panel
     # service = get_object_or_404(Service, pk=pk)
     content = {
         'title': 'Детальный просмотр',
         'post': post,
+        'side_panel': side_panel
     }
     return render(request, 'mainapp/page_details.html', content)
 
@@ -148,9 +117,19 @@ def cok(request):
     return render(request, 'mainapp/cok.html', content)
 
 def profstandarti(request):
-    return render(request, 'mainapp/profstandarti.html')
+    from .models import Profstandard
+    profstandards = Profstandard.objects.all().order_by('number')
+    content = {
+        'title': 'Профессиональные стандарты',
+        'profstandards': profstandards,
+    }
+    return render(request, 'mainapp/profstandarti.html', content)
 def contacts(request):
-    return render(request, 'mainapp/contacts.html')
+    content = {
+        'title': 'Контакты',
+        'contacts': Contact.objects.all().order_by('number')
+    }
+    return render(request, 'mainapp/contacts.html', content)
 def all_news(request):
     content = {
         'title': 'All news',

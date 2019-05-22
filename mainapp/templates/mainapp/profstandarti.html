@@ -21,200 +21,39 @@
 <div class="box_content_in_pages">
     <div class="container">
         <div class="row">
+
+            {% for ps in profstandards %}
             <div class="col-xl-4">
                 <div class="box__standart">
                     <p class="header__standart">
-                        Профессиональный стандарт №1
+                        Профессиональный стандарт № {{ps.number}}
                     </p>
                     <p class="name__standart">
-                        Сварщик
+                        {{ ps.title }}
                     </p>
                     <p class="info__standart">
                         Информация о стандарте
                     </p>
                     <p class="number__standart">
-                        Код: 40.002
+                        Код: {{ ps.info }}
                     </p>
                     <p class="info__standart">
                         Регистрационный номер
                     </p>
                     <p class="number__standart">
-                        №14
+                        {{ ps.reg_number }}
                     </p>
                     <p class="info__standart">
-                        Приказ Минтруда России № 701н от 28.11.2013 г., зарегистрирован Минюстом России 13.02.2014г.,
-                        рег. № 31301
+                        {{ ps.mintrud_prikaz }}
                     </p>
                     <button class="download__standart">
-                        <a href="#" class="button__standart" download="">Скачать</a>
-                    </button>
-                </div>
-                <div class="box__standart">
-                    <p class="header__standart">
-                        Профессиональный стандарт №1
-                    </p>
-                    <p class="name__standart">
-                        Сварщик
-                    </p>
-                    <p class="info__standart">
-                        Информация о стандарте
-                    </p>
-                    <p class="number__standart">
-                        Код: 40.002
-                    </p>
-                    <p class="info__standart">
-                        Регистрационный номер
-                    </p>
-                    <p class="number__standart">
-                        №14
-                    </p>
-                    <p class="info__standart">
-                        Приказ Минтруда России № 701н от 28.11.2013 г., зарегистрирован Минюстом России 13.02.2014г.,
-                        рег. № 31301
-                    </p>
-                    <button class="download__standart">
-                        <a href="#" class="button__standart" download="">Скачать</a>
-                    </button>
-                </div>
-                <div class="box__standart">
-                    <p class="header__standart">
-                        Профессиональный стандарт №1
-                    </p>
-                    <p class="name__standart">
-                        Сварщик
-                    </p>
-                    <p class="info__standart">
-                        Информация о стандарте
-                    </p>
-                    <p class="number__standart">
-                        Код: 40.002
-                    </p>
-                    <p class="info__standart">
-                        Регистрационный номер
-                    </p>
-                    <p class="number__standart">
-                        №14
-                    </p>
-                    <p class="info__standart">
-                        Приказ Минтруда России № 701н от 28.11.2013 г., зарегистрирован Минюстом России 13.02.2014г.,
-                        рег. № 31301
-                    </p>
-                    <button class="download__standart">
-                        <a href="#" class="button__standart" download="">Скачать</a>
-                    </button>
-                </div>
-                <div class="box__standart">
-                    <p class="header__standart">
-                        Профессиональный стандарт №1
-                    </p>
-                    <p class="name__standart">
-                        Сварщик
-                    </p>
-                    <p class="info__standart">
-                        Информация о стандарте
-                    </p>
-                    <p class="number__standart">
-                        Код: 40.002
-                    </p>
-                    <p class="info__standart">
-                        Регистрационный номер
-                    </p>
-                    <p class="number__standart">
-                        №14
-                    </p>
-                    <p class="info__standart">
-                        Приказ Минтруда России № 701н от 28.11.2013 г., зарегистрирован Минюстом России 13.02.2014г.,
-                        рег. № 31301
-                    </p>
-                    <button class="download__standart">
-                        <a href="#" class="button__standart" download="">Скачать</a>
-                    </button>
-                </div>
-            </div>
-            <div class="col-xl-4">
-                <div class="box__standart">
-                    <p class="header__standart">
-                        Профессиональный стандарт №1
-                    </p>
-                    <p class="name__standart">
-                        Сварщик
-                    </p>
-                    <p class="info__standart">
-                        Информация о стандарте
-                    </p>
-                    <p class="number__standart">
-                        Код: 40.002
-                    </p>
-                    <p class="info__standart">
-                        Регистрационный номер
-                    </p>
-                    <p class="number__standart">
-                        №14
-                    </p>
-                    <p class="info__standart">
-                        Приказ Минтруда России № 701н от 28.11.2013 г., зарегистрирован Минюстом России 13.02.2014г.,
-                        рег. № 31301
-                    </p>
-                    <button class="download__standart">
-                        <a href="#" class="button__standart" download="">Скачать</a>
-                    </button>
-                </div>
-                <div class="box__standart">
-                    <p class="header__standart">
-                        Профессиональный стандарт №1
-                    </p>
-                    <p class="name__standart">
-                        Сварщик
-                    </p>
-                    <p class="info__standart">
-                        Информация о стандарте
-                    </p>
-                    <p class="number__standart">
-                        Код: 40.002
-                    </p>
-                    <p class="info__standart">
-                        Регистрационный номер
-                    </p>
-                    <p class="number__standart">
-                        №14
-                    </p>
-                    <p class="info__standart">
-                        Приказ Минтруда России № 701н от 28.11.2013 г., зарегистрирован Минюстом России 13.02.2014г.,
-                        рег. № 31301
-                    </p>
-                    <button class="download__standart">
-                        <a href="#" class="button__standart" download="">Скачать</a>
-                    </button>
-                </div>
-                <div class="box__standart">
-                    <p class="header__standart">
-                        Профессиональный стандарт №1
-                    </p>
-                    <p class="name__standart">
-                        Сварщик
-                    </p>
-                    <p class="info__standart">
-                        Информация о стандарте
-                    </p>
-                    <p class="number__standart">
-                        Код: 40.002
-                    </p>
-                    <p class="info__standart">
-                        Регистрационный номер
-                    </p>
-                    <p class="number__standart">
-                        №14
-                    </p>
-                    <p class="info__standart">
-                        Приказ Минтруда России № 701н от 28.11.2013 г., зарегистрирован Минюстом России 13.02.2014г.,
-                        рег. № 31301
-                    </p>
-                    <button class="download__standart">
-                        <a href="#" class="button__standart" download="">Скачать</a>
+                        <a href="{{ ps.document.url }}" class="button__standart" download="">Скачать</a>
                     </button>
                 </div>
 
             </div>
+            {% endfor %}
+
 
         </div>
     </div>

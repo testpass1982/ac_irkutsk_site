@@ -40,7 +40,7 @@
                     <div class="box_doc_file" title="Скачать">
                       <div class="{% if doc.extension == '.doc' %}icon_word{% else %}icon_pdf{% endif %}"></div>
                       <p class="doc_text_name">
-                        {{ doc.title|truncatechars:45 }}
+                        {{ doc.title }}
                       </p>
                     </div>
                   </a>
@@ -50,10 +50,6 @@
             {% endfor %}
           <div class="line_center"></div>
         {% endfor %}
-
-
-
-
       </div>
 
     </div>
