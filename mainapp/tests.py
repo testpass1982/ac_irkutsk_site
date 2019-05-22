@@ -3,12 +3,14 @@ from django.test import Client
 from django.urls import resolve, reverse
 from django.http import HttpRequest
 from mainapp.models import Post, Document, DocumentCategory, SidePanel
-from mainapp.models import Service, CenterPhotos, Profstandard, Contact
+from mainapp.models import Service, CenterPhotos, Profstandard, Contact, Profile
 # from http import HTTPStatus
 from django.shortcuts import get_object_or_404
 from mixer.backend.django import mixer
 import random
 from django.core.files import File
+from django.contrib.auth.models import User
+
 
 # Create your tests here.
 
@@ -123,3 +125,26 @@ class SiteTest(TestCase):
             self.assertTrue(contact.description in response.content.decode('utf8'))
             self.assertTrue(contact.phone in response.content.decode('utf8'))
             self.assertTrue(contact.email in response.content.decode('utf8'))
+
+    def test_can_load_profile_import_file(self):
+        user = mixer.blend(User)
+        response = self.client.get('/admin/')
+        self.client.force_login(user)
+        import_file = File(open('media/import_file_example.txt', 'r'))
+        self.client.post('/import_profile/', {'file': import_file})
+        with open('media/import_file_example.txt', 'r') as file:
+            for line in file.readlines():
+                arr = line.split('::')
+                if arr[0] == 'org_short_name':
+                    self.assertEqual(arr[1].strip(), Profile.objects.first().org_short_name)
+                if arr[0] == 'org_main_phone':
+                    self.assertEqual(arr[1].strip(), Profile.objects.first().org_main_phone)
+        self.assertTrue(Profile.objects.first() is not None)
+        # now logout
+        self.client.logout()
+        # check if admin panel not present on page
+        self.assertNotIn(
+            '<div class="admin_panel row bg-light p-3">',
+            self.client.get('/').content.decode('utf8')
+            )
+        # self.assertRedirects('/import_profile/')
