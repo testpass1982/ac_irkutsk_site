@@ -34,8 +34,11 @@ class SiteTest(TestCase):
         post_details_response = self.client.get(
             reverse('details_news', kwargs={'pk': Post.objects.first().pk})
             )
+        html = post_details_response.content.decode('utf8')
         self.assertTemplateUsed(post_details_response, 'mainapp/details_news.html')
         self.assertTrue(post_details_response.status_code, 200)
+        self.assertIn(Post.objects.first().title, html)
+        self.assertIn(Post.objects.first().text, html)
 
     def test_can_open_posts_by_details_url(self):
         posts = mixer.cycle(3).blend(Post, publish_on_main_page=True)
