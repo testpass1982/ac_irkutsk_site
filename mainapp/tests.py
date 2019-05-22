@@ -131,7 +131,9 @@ class SiteTest(TestCase):
         response = self.client.get('/admin/')
         self.client.force_login(user)
         import_file = File(open('media/import_file_example.txt', 'r'))
+        # post a file
         self.client.post('/import_profile/', {'file': import_file})
+        # check if posted file updates org profile
         with open('media/import_file_example.txt', 'r') as file:
             for line in file.readlines():
                 arr = line.split('::')

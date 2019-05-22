@@ -178,11 +178,11 @@ def import_profile(request):
                 for line in file:
                     string = line.decode('utf-8')
                     if string.startswith('#') or string.startswith('\n'):
-                        print('Пропускаем: ', string)
+                        # print('Пропускаем: ', string)
                         continue
                     splitted = string.split("::")
                     import_data.update({splitted[0].strip(): splitted[1].strip()})
-                    print('Импортируем:', string)
+                    # print('Импортируем:', string)
                 profile = Profile.objects.first()
                 if profile is None:
                     profile = Profile.objects.create(org_short_name="DEMO")
